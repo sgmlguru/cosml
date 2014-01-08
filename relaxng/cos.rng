@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- This is a generic COS DTD, based on IOML 2.0 and COSML 1.0. -->
+<!-- COSML DTD 2.0 -->
+<!-- Ari Nordstr&#x00F6;m, Condesign Operations Support AB -->
+<!-- Root Element Name -->
+<!-- ================= -->
+<!-- Entities Modules -->
+<!-- ================ -->
+<grammar xmlns="http://relaxng.org/ns/structure/1.0">
+  <include href="entities.mod.rng"/>
+  <!-- ===================== -->
+  <!-- Top Level Definitions -->
+  <!-- ===================== -->
+  <define name="cos">
+    <element name="cos">
+      <ref name="cos.attlist"/>
+      <ref name="meta-data"/>
+      <ref name="body"/>
+      <optional>
+        <ref name="back"/>
+      </optional>
+    </element>
+  </define>
+  <define name="cos.attlist" combine="interleave">
+    <ref name="doc.element.att"/>
+    <ref name="applic.att"/>
+    <ref name="common.att"/>
+  </define>
+  <!-- Element Declaration Modules -->
+  <!-- =========================== -->
+  <include href="calstblx.mod.rng"/>
+  <include href="meta-data.mod.rng"/>
+  <include href="elements.mod.rng"/>
+  <start>
+    <choice>
+      <ref name="cos"/>
+    </choice>
+  </start>
+</grammar>

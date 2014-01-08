@@ -1,0 +1,116 @@
+# .This is the entity declaration module for the COSML DTD
+
+# =======================================================
+
+# Namespace declarations
+
+# =========================================
+
+namespace a = "http://relaxng.org/ns/compatibility/annotations/1.0"
+namespace xlink = "http://www.w3.org/1999/xlink"
+
+xlink.namespace.att = empty
+namespaces.att = xlink.namespace.att
+# Element parameters
+
+# =========================================
+person.content = name, contact-info?
+date.block = y, m, d
+block.component = \list | step-list | code-block | p
+block.content =
+  block.component
+  | table
+  | figure
+  | note
+  | admonishment
+  | example
+  | def-list
+  | block
+  | block-inset
+basic.inline.content = wrap
+sscript.block = subs | sups
+inline.component =
+  basic.inline.content
+  | emph
+  | lit
+  | code
+  | gui
+  | keystroke
+  | sscript.block
+  | index
+  | gl-term
+  | uri
+  | file-path
+inline.content = inline.component | quote | graphics
+ftnote.content = inline.content | hlink | xref
+p.inline.content = ftnote.content | ftnote | ftnoteref
+# Attribute parameters
+
+# =========================================
+lang.att = attribute xml:lang { xsd:NMTOKEN }?
+id.att = attribute id { xsd:ID }?
+role.att = attribute role { text }?
+label.att = attribute label { text }?
+extension.att = empty
+common.att = role.att, extension.att, id.att
+applic.att =
+  attribute applic { text }?,
+  attribute audience { text }?,
+  attribute platform { text }?,
+  attribute boolean { "AND" | "OR" }?
+doc-type.att =
+  attribute type {
+    "quote"
+    | "order-conf"
+    | "whitepaper"
+    | "report"
+    | "use-cases"
+    | "test-spec"
+    | "system-spec"
+    | "rs"
+    | "ip"
+    | "other"
+  }?
+doc.custom.att = empty
+doc.element.att =
+  doc.custom.att,
+  namespaces.att,
+  lang.att,
+  attribute help-id { text }?
+# Simple Xlink attributes
+
+# =========================================
+xlink.basic.att =
+  xlink.namespace.att,
+  [ a:defaultValue = "simple" ] attribute xlink:type { "simple" }?,
+  attribute xlink:href { text },
+  attribute xlink:title { text }?
+xlink.subdoc.att =
+  xlink.basic.att,
+  attribute xlink:role { text }?
+xlink.picture.att =
+  xlink.subdoc.att,
+  [ a:defaultValue = "embed" ] attribute xlink:show { "embed" }?,
+  [ a:defaultValue = "onLoad" ] attribute xlink:actuate { "onLoad" }?
+xlink.simple.att =
+  xlink.subdoc.att,
+  attribute xlink:show {
+    "new" | "replace" | "embed" | "other" | "none"
+  }?,
+  attribute xlink:actuate { "onLoad" | "onRequest" | "other" | "none" }?
+# CALS table model modifications
+
+# =========================================
+tbl.table-titles.mdl = caption?
+tbl.table-main.mdl = tgroup+
+tbl.table.mdl = tbl.table-titles.mdl | tbl.table-main.mdl
+yesorno = string
+tbl.table.att =
+  attribute tabstyle { text }?,
+  attribute tocentry { yesorno }?,
+  attribute shortentry { yesorno }?,
+  attribute orient { "port" | "land" }?,
+  attribute pgwide { yesorno }?,
+  common.att
+tbl.row.mdl = entry+
+tbl.entry.mdl = (p | graphics)*

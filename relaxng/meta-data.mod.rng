@@ -1,0 +1,586 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- ================= -->
+<!-- Meta-data section -->
+<!-- ================= -->
+<grammar xmlns="http://relaxng.org/ns/structure/1.0">
+  <define name="meta-data">
+    <element name="meta-data">
+      <ref name="meta-data.attlist"/>
+      <ref name="doc-info"/>
+      <zeroOrMore>
+        <ref name="covers"/>
+      </zeroOrMore>
+      <oneOrMore>
+        <ref name="author"/>
+      </oneOrMore>
+      <zeroOrMore>
+        <ref name="review"/>
+      </zeroOrMore>
+      <optional>
+        <ref name="company-info"/>
+      </optional>
+      <optional>
+        <ref name="recipient-info"/>
+      </optional>
+      <optional>
+        <ref name="abstract"/>
+      </optional>
+      <optional>
+        <ref name="pub-info"/>
+      </optional>
+    </element>
+  </define>
+  <define name="meta-data.attlist" combine="interleave">
+    <ref name="common.att"/>
+  </define>
+  <define name="doc-info">
+    <element name="doc-info">
+      <ref name="doc-info.attlist"/>
+      <ref name="title"/>
+      <optional>
+        <ref name="subtitle"/>
+      </optional>
+      <optional>
+        <ref name="doc-no"/>
+      </optional>
+      <optional>
+        <ref name="doc-type"/>
+      </optional>
+    </element>
+  </define>
+  <define name="doc-info.attlist" combine="interleave">
+    <ref name="common.att"/>
+  </define>
+  <define name="title">
+    <element name="title">
+      <ref name="title.attlist"/>
+      <zeroOrMore>
+        <choice>
+          <text/>
+          <ref name="basic.inline.content"/>
+        </choice>
+      </zeroOrMore>
+    </element>
+  </define>
+  <define name="title.attlist" combine="interleave">
+    <ref name="common.att"/>
+  </define>
+  <define name="subtitle">
+    <element name="subtitle">
+      <ref name="subtitle.attlist"/>
+      <zeroOrMore>
+        <choice>
+          <text/>
+          <ref name="basic.inline.content"/>
+        </choice>
+      </zeroOrMore>
+    </element>
+  </define>
+  <define name="subtitle.attlist" combine="interleave">
+    <ref name="common.att"/>
+  </define>
+  <define name="doc-no">
+    <element name="doc-no">
+      <ref name="doc-no.attlist"/>
+      <ref name="number"/>
+      <optional>
+        <ref name="rev"/>
+      </optional>
+    </element>
+  </define>
+  <define name="doc-no.attlist" combine="interleave">
+    <ref name="common.att"/>
+  </define>
+  <define name="doc-type">
+    <element name="doc-type">
+      <ref name="doc-type.attlist"/>
+      <zeroOrMore>
+        <choice>
+          <text/>
+          <ref name="basic.inline.content"/>
+        </choice>
+      </zeroOrMore>
+    </element>
+  </define>
+  <define name="doc-type.attlist" combine="interleave">
+    <ref name="doc-type.att"/>
+    <ref name="common.att"/>
+  </define>
+  <define name="number">
+    <element name="number">
+      <ref name="number.attlist"/>
+      <zeroOrMore>
+        <choice>
+          <text/>
+          <ref name="basic.inline.content"/>
+        </choice>
+      </zeroOrMore>
+    </element>
+  </define>
+  <define name="number.attlist" combine="interleave">
+    <ref name="common.att"/>
+  </define>
+  <define name="rev">
+    <element name="rev">
+      <ref name="rev.attlist"/>
+      <zeroOrMore>
+        <choice>
+          <text/>
+          <ref name="basic.inline.content"/>
+        </choice>
+      </zeroOrMore>
+    </element>
+  </define>
+  <define name="rev.attlist" combine="interleave">
+    <ref name="common.att"/>
+  </define>
+  <define name="covers">
+    <element name="covers">
+      <ref name="covers.attlist"/>
+      <oneOrMore>
+        <ref name="cover"/>
+      </oneOrMore>
+    </element>
+  </define>
+  <define name="covers.attlist" combine="interleave">
+    <ref name="applic.att"/>
+    <ref name="common.att"/>
+  </define>
+  <define name="cover">
+    <element name="cover">
+      <ref name="cover.attlist"/>
+      <oneOrMore>
+        <ref name="graphics"/>
+      </oneOrMore>
+    </element>
+  </define>
+  <define name="cover.attlist" combine="interleave">
+    <ref name="applic.att"/>
+    <optional>
+      <attribute name="type">
+        <choice>
+          <value>front</value>
+          <value>back</value>
+          <value>other</value>
+        </choice>
+      </attribute>
+    </optional>
+    <ref name="common.att"/>
+  </define>
+  <define name="author">
+    <element name="author">
+      <ref name="author.attlist"/>
+      <ref name="person.content"/>
+    </element>
+  </define>
+  <define name="author.attlist" combine="interleave">
+    <ref name="common.att"/>
+  </define>
+  <define name="name">
+    <element name="name">
+      <ref name="name.attlist"/>
+      <ref name="first"/>
+      <ref name="last"/>
+    </element>
+  </define>
+  <define name="name.attlist" combine="interleave">
+    <ref name="common.att"/>
+  </define>
+  <define name="first">
+    <element name="first">
+      <ref name="first.attlist"/>
+      <zeroOrMore>
+        <choice>
+          <text/>
+          <ref name="basic.inline.content"/>
+        </choice>
+      </zeroOrMore>
+    </element>
+  </define>
+  <define name="first.attlist" combine="interleave">
+    <ref name="common.att"/>
+  </define>
+  <define name="last">
+    <element name="last">
+      <ref name="last.attlist"/>
+      <zeroOrMore>
+        <choice>
+          <text/>
+          <ref name="basic.inline.content"/>
+        </choice>
+      </zeroOrMore>
+    </element>
+  </define>
+  <define name="last.attlist" combine="interleave">
+    <ref name="common.att"/>
+  </define>
+  <define name="contact-info">
+    <element name="contact-info">
+      <ref name="contact-info.attlist"/>
+      <optional>
+        <ref name="dept"/>
+      </optional>
+      <ref name="tel"/>
+      <optional>
+        <ref name="mobile"/>
+      </optional>
+      <ref name="email"/>
+    </element>
+  </define>
+  <define name="contact-info.attlist" combine="interleave">
+    <ref name="common.att"/>
+  </define>
+  <define name="dept">
+    <element name="dept">
+      <ref name="dept.attlist"/>
+      <zeroOrMore>
+        <choice>
+          <text/>
+          <ref name="basic.inline.content"/>
+        </choice>
+      </zeroOrMore>
+    </element>
+  </define>
+  <define name="dept.attlist" combine="interleave">
+    <ref name="common.att"/>
+  </define>
+  <define name="tel">
+    <element name="tel">
+      <ref name="tel.attlist"/>
+      <zeroOrMore>
+        <choice>
+          <text/>
+          <ref name="basic.inline.content"/>
+        </choice>
+      </zeroOrMore>
+    </element>
+  </define>
+  <define name="tel.attlist" combine="interleave">
+    <ref name="common.att"/>
+  </define>
+  <define name="mobile">
+    <element name="mobile">
+      <ref name="mobile.attlist"/>
+      <zeroOrMore>
+        <choice>
+          <text/>
+          <ref name="basic.inline.content"/>
+        </choice>
+      </zeroOrMore>
+    </element>
+  </define>
+  <define name="mobile.attlist" combine="interleave">
+    <ref name="common.att"/>
+  </define>
+  <define name="email">
+    <element name="email">
+      <ref name="email.attlist"/>
+      <zeroOrMore>
+        <choice>
+          <text/>
+          <ref name="basic.inline.content"/>
+        </choice>
+      </zeroOrMore>
+    </element>
+  </define>
+  <define name="email.attlist" combine="interleave">
+    <ref name="common.att"/>
+  </define>
+  <define name="recipient-info">
+    <element name="recipient-info">
+      <ref name="recipient-info.attlist"/>
+      <oneOrMore>
+        <ref name="recipient"/>
+      </oneOrMore>
+    </element>
+  </define>
+  <define name="recipient-info.attlist" combine="interleave">
+    <ref name="common.att"/>
+  </define>
+  <define name="recipient">
+    <element name="recipient">
+      <ref name="recipient.attlist"/>
+      <optional>
+        <ref name="name"/>
+      </optional>
+      <optional>
+        <ref name="company-info"/>
+      </optional>
+      <optional>
+        <ref name="contact-info"/>
+      </optional>
+    </element>
+  </define>
+  <define name="recipient.attlist" combine="interleave">
+    <empty/>
+  </define>
+  <define name="review">
+    <element name="review">
+      <ref name="review.attlist"/>
+      <ref name="person.content"/>
+    </element>
+  </define>
+  <define name="review.attlist" combine="interleave">
+    <ref name="common.att"/>
+  </define>
+  <define name="company-info">
+    <element name="company-info">
+      <ref name="company-info.attlist"/>
+      <ref name="company-name"/>
+      <optional>
+        <ref name="address"/>
+      </optional>
+      <optional>
+        <ref name="tel"/>
+      </optional>
+      <optional>
+        <ref name="email"/>
+      </optional>
+    </element>
+  </define>
+  <define name="company-info.attlist" combine="interleave">
+    <ref name="common.att"/>
+  </define>
+  <define name="company-name">
+    <element name="company-name">
+      <ref name="company-name.attlist"/>
+      <zeroOrMore>
+        <choice>
+          <text/>
+          <ref name="basic.inline.content"/>
+        </choice>
+      </zeroOrMore>
+    </element>
+  </define>
+  <define name="company-name.attlist" combine="interleave">
+    <ref name="common.att"/>
+  </define>
+  <define name="address">
+    <element name="address">
+      <ref name="address.attlist"/>
+      <oneOrMore>
+        <ref name="line"/>
+      </oneOrMore>
+    </element>
+  </define>
+  <define name="address.attlist" combine="interleave">
+    <ref name="common.att"/>
+  </define>
+  <define name="line">
+    <element name="line">
+      <ref name="line.attlist"/>
+      <zeroOrMore>
+        <choice>
+          <text/>
+          <ref name="basic.inline.content"/>
+        </choice>
+      </zeroOrMore>
+    </element>
+  </define>
+  <define name="line.attlist" combine="interleave">
+    <ref name="common.att"/>
+  </define>
+  <define name="abstract">
+    <element name="abstract">
+      <ref name="abstract.attlist"/>
+      <oneOrMore>
+        <ref name="p"/>
+      </oneOrMore>
+    </element>
+  </define>
+  <define name="abstract.attlist" combine="interleave">
+    <ref name="common.att"/>
+  </define>
+  <define name="pub-info">
+    <element name="pub-info">
+      <ref name="pub-info.attlist"/>
+      <zeroOrMore>
+        <ref name="rev-date"/>
+      </zeroOrMore>
+      <optional>
+        <ref name="first-date"/>
+      </optional>
+      <optional>
+        <ref name="signed-info"/>
+      </optional>
+      <optional>
+        <ref name="disclaimer"/>
+      </optional>
+      <zeroOrMore>
+        <ref name="tm-list"/>
+      </zeroOrMore>
+      <optional>
+        <ref name="copyright"/>
+      </optional>
+      <zeroOrMore>
+        <ref name="graphics"/>
+      </zeroOrMore>
+    </element>
+  </define>
+  <define name="pub-info.attlist" combine="interleave">
+    <ref name="common.att"/>
+  </define>
+  <define name="rev-date">
+    <element name="rev-date">
+      <ref name="rev-date.attlist"/>
+      <ref name="date.block"/>
+    </element>
+  </define>
+  <define name="rev-date.attlist" combine="interleave">
+    <ref name="common.att"/>
+  </define>
+  <define name="first-date">
+    <element name="first-date">
+      <ref name="first-date.attlist"/>
+      <ref name="date.block"/>
+    </element>
+  </define>
+  <define name="first-date.attlist" combine="interleave">
+    <ref name="common.att"/>
+  </define>
+  <define name="signed-info">
+    <element name="signed-info">
+      <ref name="signed-info.attlist"/>
+      <zeroOrMore>
+        <ref name="name"/>
+      </zeroOrMore>
+      <optional>
+        <ref name="signed-date"/>
+      </optional>
+      <optional>
+        <ref name="address"/>
+      </optional>
+    </element>
+  </define>
+  <define name="signed-info.attlist" combine="interleave">
+    <ref name="common.att"/>
+  </define>
+  <define name="signed-date">
+    <element name="signed-date">
+      <ref name="signed-date.attlist"/>
+      <ref name="date.block"/>
+    </element>
+  </define>
+  <define name="signed-date.attlist" combine="interleave">
+    <ref name="common.att"/>
+  </define>
+  <define name="y">
+    <element name="y">
+      <ref name="y.attlist"/>
+      <zeroOrMore>
+        <choice>
+          <text/>
+          <ref name="basic.inline.content"/>
+        </choice>
+      </zeroOrMore>
+    </element>
+  </define>
+  <define name="y.attlist" combine="interleave">
+    <ref name="common.att"/>
+  </define>
+  <define name="m">
+    <element name="m">
+      <ref name="m.attlist"/>
+      <zeroOrMore>
+        <choice>
+          <text/>
+          <ref name="basic.inline.content"/>
+        </choice>
+      </zeroOrMore>
+    </element>
+  </define>
+  <define name="m.attlist" combine="interleave">
+    <ref name="common.att"/>
+  </define>
+  <define name="d">
+    <element name="d">
+      <ref name="d.attlist"/>
+      <zeroOrMore>
+        <choice>
+          <text/>
+          <ref name="basic.inline.content"/>
+        </choice>
+      </zeroOrMore>
+    </element>
+  </define>
+  <define name="d.attlist" combine="interleave">
+    <ref name="common.att"/>
+  </define>
+  <define name="disclaimer">
+    <element name="disclaimer">
+      <ref name="disclaimer.attlist"/>
+      <oneOrMore>
+        <ref name="p"/>
+      </oneOrMore>
+    </element>
+  </define>
+  <define name="disclaimer.attlist" combine="interleave">
+    <ref name="common.att"/>
+  </define>
+  <define name="tm-list">
+    <element name="tm-list">
+      <ref name="tm-list.attlist"/>
+      <oneOrMore>
+        <ref name="tm-item"/>
+      </oneOrMore>
+    </element>
+  </define>
+  <define name="tm-list.attlist" combine="interleave">
+    <ref name="common.att"/>
+  </define>
+  <define name="tm-item">
+    <element name="tm-item">
+      <ref name="tm-item.attlist"/>
+      <optional>
+        <ref name="graphics"/>
+      </optional>
+      <ref name="trademark"/>
+      <ref name="owner"/>
+    </element>
+  </define>
+  <define name="tm-item.attlist" combine="interleave">
+    <ref name="common.att"/>
+  </define>
+  <define name="trademark">
+    <element name="trademark">
+      <ref name="trademark.attlist"/>
+      <zeroOrMore>
+        <choice>
+          <text/>
+          <ref name="basic.inline.content"/>
+        </choice>
+      </zeroOrMore>
+    </element>
+  </define>
+  <define name="trademark.attlist" combine="interleave">
+    <ref name="common.att"/>
+  </define>
+  <define name="owner">
+    <element name="owner">
+      <ref name="owner.attlist"/>
+      <zeroOrMore>
+        <choice>
+          <text/>
+          <ref name="basic.inline.content"/>
+        </choice>
+      </zeroOrMore>
+    </element>
+  </define>
+  <define name="owner.attlist" combine="interleave">
+    <ref name="common.att"/>
+  </define>
+  <define name="copyright">
+    <element name="copyright">
+      <ref name="copyright.attlist"/>
+      <zeroOrMore>
+        <choice>
+          <text/>
+          <ref name="basic.inline.content"/>
+        </choice>
+      </zeroOrMore>
+    </element>
+  </define>
+  <define name="copyright.attlist" combine="interleave">
+    <ref name="common.att"/>
+  </define>
+</grammar>

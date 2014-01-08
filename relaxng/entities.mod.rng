@@ -1,0 +1,294 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- .This is the entity declaration module for the COSML DTD -->
+<!-- ======================================================= -->
+<!-- Namespace declarations -->
+<!-- ========================================= -->
+<grammar xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://relaxng.org/ns/structure/1.0" datatypeLibrary="http://www.w3.org/2001/XMLSchema-datatypes">
+  <define name="xlink.namespace.att">
+    <empty/>
+  </define>
+  <define name="namespaces.att">
+    <ref name="xlink.namespace.att"/>
+  </define>
+  <!-- Element parameters -->
+  <!-- ========================================= -->
+  <define name="person.content">
+    <ref name="name"/>
+    <optional>
+      <ref name="contact-info"/>
+    </optional>
+  </define>
+  <define name="date.block">
+    <ref name="y"/>
+    <ref name="m"/>
+    <ref name="d"/>
+  </define>
+  <define name="block.component">
+    <choice>
+      <ref name="list"/>
+      <ref name="step-list"/>
+      <ref name="code-block"/>
+      <ref name="p"/>
+    </choice>
+  </define>
+  <define name="block.content">
+    <choice>
+      <ref name="block.component"/>
+      <ref name="table"/>
+      <ref name="figure"/>
+      <ref name="note"/>
+      <ref name="admonishment"/>
+      <ref name="example"/>
+      <ref name="def-list"/>
+      <ref name="block"/>
+      <ref name="block-inset"/>
+    </choice>
+  </define>
+  <define name="basic.inline.content">
+    <ref name="wrap"/>
+  </define>
+  <define name="sscript.block">
+    <choice>
+      <ref name="subs"/>
+      <ref name="sups"/>
+    </choice>
+  </define>
+  <define name="inline.component">
+    <choice>
+      <ref name="basic.inline.content"/>
+      <ref name="emph"/>
+      <ref name="lit"/>
+      <ref name="code"/>
+      <ref name="gui"/>
+      <ref name="keystroke"/>
+      <ref name="sscript.block"/>
+      <ref name="index"/>
+      <ref name="gl-term"/>
+      <ref name="uri"/>
+      <ref name="file-path"/>
+    </choice>
+  </define>
+  <define name="inline.content">
+    <choice>
+      <ref name="inline.component"/>
+      <ref name="quote"/>
+      <ref name="graphics"/>
+    </choice>
+  </define>
+  <define name="ftnote.content">
+    <choice>
+      <ref name="inline.content"/>
+      <ref name="hlink"/>
+      <ref name="xref"/>
+    </choice>
+  </define>
+  <define name="p.inline.content">
+    <choice>
+      <ref name="ftnote.content"/>
+      <ref name="ftnote"/>
+      <ref name="ftnoteref"/>
+    </choice>
+  </define>
+  <!-- Attribute parameters -->
+  <!-- ========================================= -->
+  <define name="lang.att">
+    <optional>
+      <attribute name="xml:lang">
+        <data type="NMTOKEN"/>
+      </attribute>
+    </optional>
+  </define>
+  <define name="id.att">
+    <optional>
+      <attribute name="id">
+        <data type="ID"/>
+      </attribute>
+    </optional>
+  </define>
+  <define name="role.att">
+    <optional>
+      <attribute name="role"/>
+    </optional>
+  </define>
+  <define name="label.att">
+    <optional>
+      <attribute name="label"/>
+    </optional>
+  </define>
+  <define name="extension.att">
+    <empty/>
+  </define>
+  <define name="common.att">
+    <ref name="role.att"/>
+    <ref name="extension.att"/>
+    <ref name="id.att"/>
+  </define>
+  <define name="applic.att">
+    <optional>
+      <attribute name="applic"/>
+    </optional>
+    <optional>
+      <attribute name="audience"/>
+    </optional>
+    <optional>
+      <attribute name="platform"/>
+    </optional>
+    <optional>
+      <attribute name="boolean">
+        <choice>
+          <value>AND</value>
+          <value>OR</value>
+        </choice>
+      </attribute>
+    </optional>
+  </define>
+  <define name="doc-type.att">
+    <optional>
+      <attribute name="type">
+        <choice>
+          <value>quote</value>
+          <value>order-conf</value>
+          <value>whitepaper</value>
+          <value>report</value>
+          <value>use-cases</value>
+          <value>test-spec</value>
+          <value>system-spec</value>
+          <value>rs</value>
+          <value>ip</value>
+          <value>other</value>
+        </choice>
+      </attribute>
+    </optional>
+  </define>
+  <define name="doc.custom.att">
+    <empty/>
+  </define>
+  <define name="doc.element.att">
+    <ref name="doc.custom.att"/>
+    <ref name="namespaces.att"/>
+    <ref name="lang.att"/>
+    <optional>
+      <attribute name="help-id"/>
+    </optional>
+  </define>
+  <!-- Simple Xlink attributes -->
+  <!-- ========================================= -->
+  <define name="xlink.basic.att">
+    <ref name="xlink.namespace.att"/>
+    <optional>
+      <attribute name="xlink:type" a:defaultValue="simple">
+        <value>simple</value>
+      </attribute>
+    </optional>
+    <attribute name="xlink:href"/>
+    <optional>
+      <attribute name="xlink:title"/>
+    </optional>
+  </define>
+  <define name="xlink.subdoc.att">
+    <ref name="xlink.basic.att"/>
+    <optional>
+      <attribute name="xlink:role"/>
+    </optional>
+  </define>
+  <define name="xlink.picture.att">
+    <ref name="xlink.subdoc.att"/>
+    <optional>
+      <attribute name="xlink:show" a:defaultValue="embed">
+        <value>embed</value>
+      </attribute>
+    </optional>
+    <optional>
+      <attribute name="xlink:actuate" a:defaultValue="onLoad">
+        <value>onLoad</value>
+      </attribute>
+    </optional>
+  </define>
+  <define name="xlink.simple.att">
+    <ref name="xlink.subdoc.att"/>
+    <optional>
+      <attribute name="xlink:show">
+        <choice>
+          <value>new</value>
+          <value>replace</value>
+          <value>embed</value>
+          <value>other</value>
+          <value>none</value>
+        </choice>
+      </attribute>
+    </optional>
+    <optional>
+      <attribute name="xlink:actuate">
+        <choice>
+          <value>onLoad</value>
+          <value>onRequest</value>
+          <value>other</value>
+          <value>none</value>
+        </choice>
+      </attribute>
+    </optional>
+  </define>
+  <!-- CALS table model modifications -->
+  <!-- ========================================= -->
+  <define name="tbl.table-titles.mdl">
+    <optional>
+      <ref name="caption"/>
+    </optional>
+  </define>
+  <define name="tbl.table-main.mdl">
+    <oneOrMore>
+      <ref name="tgroup"/>
+    </oneOrMore>
+  </define>
+  <define name="tbl.table.mdl">
+    <choice>
+      <ref name="tbl.table-titles.mdl"/>
+      <ref name="tbl.table-main.mdl"/>
+    </choice>
+  </define>
+  <define name="yesorno">
+    <data type="string" datatypeLibrary=""/>
+  </define>
+  <define name="tbl.table.att">
+    <optional>
+      <attribute name="tabstyle"/>
+    </optional>
+    <optional>
+      <attribute name="tocentry">
+        <ref name="yesorno"/>
+      </attribute>
+    </optional>
+    <optional>
+      <attribute name="shortentry">
+        <ref name="yesorno"/>
+      </attribute>
+    </optional>
+    <optional>
+      <attribute name="orient">
+        <choice>
+          <value>port</value>
+          <value>land</value>
+        </choice>
+      </attribute>
+    </optional>
+    <optional>
+      <attribute name="pgwide">
+        <ref name="yesorno"/>
+      </attribute>
+    </optional>
+    <ref name="common.att"/>
+  </define>
+  <define name="tbl.row.mdl">
+    <oneOrMore>
+      <ref name="entry"/>
+    </oneOrMore>
+  </define>
+  <define name="tbl.entry.mdl">
+    <zeroOrMore>
+      <choice>
+        <ref name="p"/>
+        <ref name="graphics"/>
+      </choice>
+    </zeroOrMore>
+  </define>
+</grammar>

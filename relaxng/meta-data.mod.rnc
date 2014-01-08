@@ -1,0 +1,142 @@
+# =================
+
+# Meta-data section
+
+# =================
+
+meta-data =
+  element meta-data {
+    meta-data.attlist,
+    doc-info,
+    covers*,
+    author+,
+    review*,
+    company-info?,
+    recipient-info?,
+    abstract?,
+    pub-info?
+  }
+meta-data.attlist &= common.att
+doc-info =
+  element doc-info {
+    doc-info.attlist, title, subtitle?, doc-no?, doc-type?
+  }
+doc-info.attlist &= common.att
+title = element title { title.attlist, (text | basic.inline.content)* }
+title.attlist &= common.att
+subtitle =
+  element subtitle { subtitle.attlist, (text | basic.inline.content)* }
+subtitle.attlist &= common.att
+doc-no = element doc-no { doc-no.attlist, number, rev? }
+doc-no.attlist &= common.att
+doc-type =
+  element doc-type { doc-type.attlist, (text | basic.inline.content)* }
+doc-type.attlist &= doc-type.att, common.att
+number =
+  element number { number.attlist, (text | basic.inline.content)* }
+number.attlist &= common.att
+rev = element rev { rev.attlist, (text | basic.inline.content)* }
+rev.attlist &= common.att
+covers = element covers { covers.attlist, cover+ }
+covers.attlist &= applic.att, common.att
+cover = element cover { cover.attlist, graphics+ }
+cover.attlist &=
+  applic.att,
+  attribute type { "front" | "back" | "other" }?,
+  common.att
+author = element author { author.attlist, person.content }
+author.attlist &= common.att
+name = element name { name.attlist, first, last }
+name.attlist &= common.att
+first = element first { first.attlist, (text | basic.inline.content)* }
+first.attlist &= common.att
+last = element last { last.attlist, (text | basic.inline.content)* }
+last.attlist &= common.att
+contact-info =
+  element contact-info {
+    contact-info.attlist, dept?, tel, mobile?, email
+  }
+contact-info.attlist &= common.att
+dept = element dept { dept.attlist, (text | basic.inline.content)* }
+dept.attlist &= common.att
+tel = element tel { tel.attlist, (text | basic.inline.content)* }
+tel.attlist &= common.att
+mobile =
+  element mobile { mobile.attlist, (text | basic.inline.content)* }
+mobile.attlist &= common.att
+email = element email { email.attlist, (text | basic.inline.content)* }
+email.attlist &= common.att
+recipient-info =
+  element recipient-info { recipient-info.attlist, recipient+ }
+recipient-info.attlist &= common.att
+recipient =
+  element recipient {
+    recipient.attlist, name?, company-info?, contact-info?
+  }
+recipient.attlist &= empty
+review = element review { review.attlist, person.content }
+review.attlist &= common.att
+company-info =
+  element company-info {
+    company-info.attlist, company-name, address?, tel?, email?
+  }
+company-info.attlist &= common.att
+company-name =
+  element company-name {
+    company-name.attlist, (text | basic.inline.content)*
+  }
+company-name.attlist &= common.att
+address = element address { address.attlist, line+ }
+address.attlist &= common.att
+line = element line { line.attlist, (text | basic.inline.content)* }
+line.attlist &= common.att
+abstract = element abstract { abstract.attlist, p+ }
+abstract.attlist &= common.att
+pub-info =
+  element pub-info {
+    pub-info.attlist,
+    rev-date*,
+    first-date?,
+    signed-info?,
+    disclaimer?,
+    tm-list*,
+    copyright?,
+    graphics*
+  }
+pub-info.attlist &= common.att
+rev-date = element rev-date { rev-date.attlist, date.block }
+rev-date.attlist &= common.att
+first-date = element first-date { first-date.attlist, date.block }
+first-date.attlist &= common.att
+signed-info =
+  element signed-info {
+    signed-info.attlist, name*, signed-date?, address?
+  }
+signed-info.attlist &= common.att
+signed-date = element signed-date { signed-date.attlist, date.block }
+signed-date.attlist &= common.att
+y = element y { y.attlist, (text | basic.inline.content)* }
+y.attlist &= common.att
+m = element m { m.attlist, (text | basic.inline.content)* }
+m.attlist &= common.att
+d = element d { d.attlist, (text | basic.inline.content)* }
+d.attlist &= common.att
+disclaimer = element disclaimer { disclaimer.attlist, p+ }
+disclaimer.attlist &= common.att
+tm-list = element tm-list { tm-list.attlist, tm-item+ }
+tm-list.attlist &= common.att
+tm-item =
+  element tm-item { tm-item.attlist, graphics?, trademark, owner }
+tm-item.attlist &= common.att
+trademark =
+  element trademark {
+    trademark.attlist, (text | basic.inline.content)*
+  }
+trademark.attlist &= common.att
+owner = element owner { owner.attlist, (text | basic.inline.content)* }
+owner.attlist &= common.att
+copyright =
+  element copyright {
+    copyright.attlist, (text | basic.inline.content)*
+  }
+copyright.attlist &= common.att

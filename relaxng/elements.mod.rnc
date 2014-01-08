@@ -1,0 +1,244 @@
+# This is the element declaration module for the COSML DTD
+
+# ========================================================
+
+# ============
+
+# Body Section
+
+# ============
+
+namespace a = "http://relaxng.org/ns/compatibility/annotations/1.0"
+
+body =
+  element body {
+    body.attlist,
+    (block.content+ | (section | inset)+)
+  }
+body.attlist &= common.att
+# Section definition
+section =
+  element section {
+    section.attlist, title, block.content*, (section | inset)*
+  }
+section.attlist &= doc.element.att, applic.att, common.att
+# Block-level elements
+inset = element inset { inset.attlist, empty }
+inset.attlist &= applic.att, common.att, xlink.subdoc.att
+block-inset = element block-inset { block-inset.attlist, empty }
+block-inset.attlist &= xlink.subdoc.att, applic.att, common.att
+\list = element list { list.attlist, p?, (list-item, list-item+) }
+list.attlist &=
+  [ a:defaultValue = "unordered" ]
+  attribute type { "unordered" | "ordered" }?,
+  applic.att,
+  common.att
+step-list =
+  element step-list {
+    step-list.attlist,
+    admonishment*,
+    p?,
+    step,
+    (p?, step, (p | step)*)
+  }
+step-list.attlist &= applic.att, common.att
+def-list =
+  element def-list {
+    def-list.attlist,
+    p?,
+    def-item,
+    (p?, def-item, (p | def-item)*)
+  }
+def-list.attlist &= applic.att, common.att
+def-item = element def-item { def-item.attlist, term, definition }
+def-item.attlist &= applic.att, common.att
+term = element term { term.attlist, (text | inline.content)* }
+term.attlist &= common.att
+definition = element definition { definition.attlist, (p | \list)+ }
+definition.attlist &= common.att
+p = element p { p.attlist, (text | p.inline.content)* }
+p.attlist &= applic.att, common.att
+list-item =
+  element list-item {
+    list-item.attlist,
+    ((p | graphics | note)+ | \list)
+  }
+list-item.attlist &= applic.att, common.att
+step =
+  element step {
+    step.attlist,
+    admonishment*,
+    ((p, (p | graphics | figure | note)*)
+     | \list)
+  }
+step.attlist &= applic.att, common.att
+figure =
+  element figure {
+    figure.attlist,
+    ((graphics+, caption?, poslist?) | figure+)
+  }
+figure.attlist &= applic.att, common.att
+graphics = element graphics { graphics.attlist, empty }
+graphics.attlist &=
+  xlink.picture.att,
+  attribute width { text }?,
+  attribute height { text }?,
+  [ a:defaultValue = "no" ] attribute boxed { "yes" | "no" }?,
+  applic.att,
+  common.att
+caption = element caption { caption.attlist, (text | wrap)* }
+caption.attlist &= common.att
+poslist = element poslist { poslist.attlist, p?, pos+ }
+poslist.attlist &= applic.att, common.att
+pos = element pos { pos.attlist, (text | inline.content)* }
+pos.attlist &=
+  attribute reset { "yes" | "no" }?,
+  attribute startno { text }?,
+  applic.att,
+  common.att
+note = element note { note.attlist, p, p? }
+note.attlist &= common.att
+admonishment = element admonishment { admonishment.attlist, p, p? }
+admonishment.attlist &=
+  attribute type { "caution" | "warning" | "danger" },
+  applic.att,
+  common.att
+example =
+  element example {
+    example.attlist, caption, (block.component | graphics)+
+  }
+example.attlist &= applic.att, common.att
+code-block = element code-block { code-block.attlist, text }
+code-block.attlist &=
+  [ a:defaultValue = "preserve" ] attribute xml:space { "preserve" }?,
+  applic.att,
+  common.att
+block = element block { block.attlist, block.content* }
+block.attlist &= doc.element.att, applic.att, common.att
+# Inline elements
+emph =
+  element emph {
+    emph.attlist, (text | basic.inline.content | sscript.block)*
+  }
+emph.attlist &= common.att
+lit =
+  element lit {
+    lit.attlist, (text | basic.inline.content | sscript.block)*
+  }
+lit.attlist &= lang.att, common.att
+quote = element quote { quote.attlist, (text | inline.component)* }
+quote.attlist &= common.att
+code = element code { code.attlist, (text | basic.inline.content)* }
+code.attlist &=
+  [ a:defaultValue = "preserve" ] attribute xml:space { "preserve" }?,
+  common.att
+gui = element gui { gui.attlist, (text | basic.inline.content)* }
+gui.attlist &= common.att
+keystroke =
+  element keystroke {
+    keystroke.attlist, (text | basic.inline.content)*
+  }
+keystroke.attlist &= common.att
+uri = element uri { uri.attlist, (text | basic.inline.content)* }
+uri.attlist &=
+  [ a:defaultValue = "http" ]
+  attribute protocol {
+    "http" | "ftp" | "file" | "news" | "email" | "other"
+  }?,
+  common.att
+file-path =
+  element file-path {
+    file-path.attlist, (text | basic.inline.content)*
+  }
+file-path.attlist &=
+  [ a:defaultValue = "dos" ]
+  attribute type { "dos" | "unix" | "other" }?,
+  common.att
+subs =
+  element subs { subs.attlist, (text | basic.inline.content | emph)* }
+subs.attlist &= common.att
+sups =
+  element sups { sups.attlist, (text | basic.inline.content | emph)* }
+sups.attlist &= common.att
+# <!ELEMENT index   (#PCDATA | %inline.content;)* >
+# <!ATTLIST index   index-term CDATA #IMPLIED
+#                   index-term2 CDATA #IMPLIED
+#                   index-term3 CDATA #IMPLIED
+#                   see CDATA #IMPLIED
+#                   see-also CDATA #IMPLIED
+#                   %common.att;
+#                   >
+
+# The index model used below is the DocBook Index model; for usage,
+# see http://www.docbook.org/tdg/en/html/indexterm.html
+index =
+  element index {
+    index.attlist,
+    primary,
+    ((secondary,
+      ((tertiary, (see | see-also+)?)
+       | see
+       | see-also+)?)
+     | see
+     | see-also+)?
+  }
+index.attlist &=
+  [ a:defaultValue = "normal" ]
+  attribute significance { "normal" | "preferred" }?,
+  attribute class { "singular" | "endofrange" | "startofrange" }?,
+  attribute startref { text }?,
+  common.att
+primary = element primary { primary.attlist, (text | inline.content)* }
+primary.attlist &= common.att
+secondary =
+  element secondary { secondary.attlist, (text | inline.content)* }
+secondary.attlist &= common.att
+tertiary =
+  element tertiary { tertiary.attlist, (text | inline.content)* }
+tertiary.attlist &= common.att
+see = element see { see.attlist, (text | inline.content)* }
+see.attlist &= common.att
+see-also =
+  element see-also { see-also.attlist, (text | inline.content)* }
+see-also.attlist &= common.att
+gl-term = element gl-term { gl-term.attlist, (text | inline.content)* }
+gl-term.attlist &=
+  attribute glossary-term { text }?,
+  common.att
+xref =
+  element xref {
+    xref.attlist,
+    (text | inline.content | locator | ftnote | ftnoteref)*
+  }
+xref.attlist &= applic.att, common.att
+locator = element locator { locator.attlist, empty }
+locator.attlist &= common.att, applic.att, xlink.simple.att
+hlink =
+  element hlink {
+    hlink.attlist, (text | inline.content | ftnote | ftnoteref)*
+  }
+hlink.attlist &= common.att, applic.att, xlink.simple.att
+ftnote = element ftnote { ftnote.attlist, (text | ftnote.content)* }
+ftnote.attlist &= label.att, applic.att, common.att
+ftnoteref =
+  element ftnoteref { ftnoteref.attlist, (text | inline.component)* }
+ftnoteref.attlist &= label.att, applic.att, xlink.simple.att, common.att
+wrap = element wrap { wrap.attlist, (text | p.inline.content)* }
+wrap.attlist &= doc.element.att, applic.att, common.att
+# ===========
+
+# Back matter
+
+# ===========
+back =
+  element back {
+    back.attlist, (section | glossary | reference | inset)*
+  }
+back.attlist &= common.att
+# Section in back is an appendix, by definition
+glossary = element glossary { glossary.attlist, title?, p?, def-item+ }
+glossary.attlist &= doc.element.att, applic.att, common.att
+reference = element reference { reference.attlist, p?, ref-item+ }
+reference.attlist &= doc.element.att, applic.att, common.att
+ref-item = element ref-item { ref-item.attlist, doc-info, p? }
+ref-item.attlist &= applic.att, common.att
