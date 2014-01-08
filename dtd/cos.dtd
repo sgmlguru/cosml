@@ -1,0 +1,47 @@
+<?PUBLIC "-//COS//DTD COSML 2.0//ISO10646"?>
+
+<!-- This is a generic COS DTD, based on IOML 2.0 and COSML 1.0.  --> 
+<!-- COSML DTD 2.0 -->
+<!-- Ari Nordstr&#x00F6;m, Condesign Operations Support AB -->
+
+
+
+<!-- Root Element Name -->
+<!-- ================= -->
+
+<!ENTITY % root "cos" >
+
+
+
+<!-- Entities Modules -->
+<!-- ================ -->
+
+<!ENTITY % entities PUBLIC "-//COS//ENTITIES COSML 2.0//ISO10646" "entities.mod" >
+%entities;
+
+
+
+
+<!-- ===================== -->
+<!-- Top Level Definitions -->
+<!-- ===================== -->
+
+
+<!ELEMENT %root;	(meta-data, body, back?) >
+<!ATTLIST %root;	%doc.element.att;
+					%applic.att;
+					%common.att; >
+
+
+
+<!-- Element Declaration Modules -->
+<!-- =========================== -->
+
+<!ENTITY % calstblx PUBLIC "-//COS//DTD CALS XML Table Model 3.0//EN" "calstblx.mod" >
+%calstblx;
+
+<!ENTITY % meta-data PUBLIC "-//COS//ELEMENTS Meta-data Structures 2.0//ISO10646" "meta-data.mod" >
+%meta-data;
+
+<!ENTITY % elements PUBLIC "-//COS//ELEMENTS COSML 2.0//ISO10646" "elements.mod" >
+%elements;

@@ -1,0 +1,22 @@
+-- Catalog file --
+
+
+-- COSML 1.0 --
+
+PUBLIC "-//COS//DTD COSML 2.0//ISO10646"		  "file:///mnt/win7-work/SGML/DTD/cosml/dtd/cos.dtd"
+
+PUBLIC "-//COS//ELEMENTS COSML 2.0//ISO10646"		  "file:///mnt/win7-work/SGML/DTD/cosml/dtd/elements.mod"
+
+PUBLIC "-//COS//ENTITIES COSML 2.0//ISO10646"		  "file:///mnt/win7-work/SGML/DTD/cosml/dtd/entities.mod"
+
+PUBLIC "-//COS//ELEMENTS Meta-data Structures 2.0//ISO10646" "file:///mnt/win7-work/SGML/DTD/cosml/dtd/meta-data.mod"
+
+PUBLIC "-//COS//DTD CALS XML Table Model 3.0//EN" "file:///mnt/win7-work/SGML/DTD/cosml/dtd/calstblx.mod"
+
+
+
+
+
+-- Balisage --
+
+SYSTEM "PeerReview.dtd" 	"file:///mnt/win7-work/SGML/DTD/Balisage/Review/DTD/PeerReview.dtd"
