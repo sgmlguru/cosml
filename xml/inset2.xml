@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="file:///mnt/win7-work/SGML/DTD/cosml/relaxng/cos.rnc" type="application/relax-ng-compact-syntax"?>
+<section id="id2" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>Inset 2 Section</title>
+    <p>Inset 2 text. <xref>BROKEN LOCATOR: <locator id="id-broken-locator" xlink:href="nonexistent.xml#no-id"/>.</xref></p>
+    <p>Bla bla.<xref> VALID LINK: <locator id="valid-locator" xlink:href="inset3.xml#id3"/>.</xref></p>
+    <inset xlink:href="urn:inset3#id3"/>
+</section>

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="file:///mnt/win7-work/SGML/DTD/cosml/relaxng/cos.rnc" type="application/relax-ng-compact-syntax"?>
+<section id="id3" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>Inset 3 Section</title>
+    <p>Inset 3 text.</p>
+    <block-inset xlink:href="urn:block-inset1#idb1"/>
+    <inset xlink:href="urn:inset4#id4"/>
+</section>

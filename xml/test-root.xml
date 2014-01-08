@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="file:///mnt/win7-work/SGML/DTD/cosml/relaxng/cos.rnc" type="application/relax-ng-compact-syntax"?>
+<cos xmlns:xlink="http://www.w3.org/1999/xlink">
+    <meta-data>
+        <doc-info>
+            <title>Title</title>
+        </doc-info>
+        <author>
+            <name>
+                <first>A</first>
+                <last>N</last>
+            </name>
+        </author>
+    </meta-data>
+    <body>
+        <section>
+            <title>Section 1 in root</title>
+            <p>Text in s1</p>
+            <figure>
+                <graphics xlink:href="urn:image1"/>
+                <caption>Image 1</caption>
+            </figure>
+            <inset xlink:href="urn:inset1#id1"/>
+        </section>
+        <inset xlink:href="urn:inset2#id2"/>
+    </body>
+</cos>
