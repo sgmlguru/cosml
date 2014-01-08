@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="15.1">
+    <meta>
+        <filters directoryPatterns="" filePatterns="" positiveFilePatterns="" showHiddenFiles="false"/>
+        <options>
+            <serialized version="15.1" xml:space="preserve">
+                <map>
+                    <entry>
+                        <String>enable.project.master.files.support</String>
+                        <Boolean>true</Boolean>
+                    </entry>
+                </map>
+            </serialized>
+        </options>
+    </meta>
+    <projectTree name="cosml-2.xpr">
+        <folder masterFiles="true" name="Master Files">
+            <file name="dtd/cos.dtd"/>
+            <file name="relaxng/cos.rnc"/>
+        </folder>
+        <file name="dtd/calstblx.mod"/>
+        <file name="relaxng/calstblx.mod.rnc"/>
+        <file name="dtd/catalog"/>
+        <file name="dtd/cos.dtd"/>
+        <file name="relaxng/cos.rnc"/>
+        <file name="dtd/cos.xml"/>
+        <file name="dtd/elements.mod"/>
+        <file name="relaxng/elements.mod.rnc"/>
+        <file name="dtd/entities.mod"/>
+        <file name="relaxng/entities.mod.rnc"/>
+        <file name="dtd/meta-data.mod"/>
+        <file name="relaxng/meta-data.mod.rnc"/>
+    </projectTree>
+</project>

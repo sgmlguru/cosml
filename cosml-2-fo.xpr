@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="15.1">
+    <meta>
+        <filters directoryPatterns="" filePatterns="" positiveFilePatterns="" showHiddenFiles="false"/>
+        <options>
+            <serialized version="15.1" xml:space="preserve">
+                <map>
+                    <entry>
+                        <String>enable.project.master.files.support</String>
+                        <Boolean>true</Boolean>
+                    </entry>
+                </map>
+            </serialized>
+        </options>
+    </meta>
+    <projectTree name="cosml-2-fo.xpr">
+        <folder masterFiles="true" name="Master Files">
+            <file name="fo/cos-fo-formal.xsl"/>
+            <file name="fo/cos-fo-internal.xsl"/>
+        </folder>
+        <file name="fo/attribute-set.xsl"/>
+        <file name="fo/back.xsl"/>
+        <file name="fo/block.xsl"/>
+        <file name="fo/body.xsl"/>
+        <file name="fo/bookmarks.xsl"/>
+        <file name="fo/change-tracking.xsl"/>
+        <file name="fo/cos-fo-formal.xsl"/>
+        <file name="fo/cos-fo-internal.xsl"/>
+        <file name="fo/demo.xsl"/>
+        <file name="fo/extension.xsl"/>
+        <file name="fo/index.xsl"/>
+        <file name="fo/inline.xsl"/>
+        <file name="fo/inset.xsl"/>
+        <file name="fo/l10n.xsl"/>
+        <file name="fo/layout.xsl"/>
+        <file name="fo/list.xsl"/>
+        <file name="fo/meta-data.xsl"/>
+        <file name="fo/normalize.xsl"/>
+        <file name="fo/param.xsl"/>
+        <file name="fo/sections.xsl"/>
+        <file name="fo/static-content.xsl"/>
+        <file name="fo/strings.xml"/>
+        <file name="fo/table.xsl"/>
+        <file name="fo/toc.xsl"/>
+        <file name="fo/xref.xsl"/>
+    </projectTree>
+</project>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="15.1">
+    <meta>
+        <filters directoryPatterns="" filePatterns="" positiveFilePatterns="" showHiddenFiles="false"/>
+        <options/>
+    </meta>
+    <projectTree name="cosml-2-xproc.xpr">
+        <file name="xproc/publish-cosml-html.xpl"/>
+        <file name="xproc/publish-cosml-pdf.xpl"/>
+        <file name="xproc/xref-check-cosml.xpl"/>
+    </projectTree>
+</project>

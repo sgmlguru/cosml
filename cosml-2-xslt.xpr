@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="15.1">
+    <meta>
+        <filters directoryPatterns="" filePatterns="" positiveFilePatterns="" showHiddenFiles="false"/>
+        <options/>
+    </meta>
+    <projectTree name="cosml-2-xslt.xpr">
+        <file name="xslt/cosml2html-ti.xsl"/>
+        <file name="xslt/link-target-check-multifile.xsl"/>
+        <file name="xslt/normalize-2.xsl"/>
+    </projectTree>
+</project>
