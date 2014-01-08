@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- ================= -->
-<!-- Meta-data section -->
-<!-- ================= -->
 <grammar xmlns="http://relaxng.org/ns/structure/1.0">
+  <!-- ================= -->
+  <!-- Meta-data section -->
+  <!-- ================= -->
   <define name="meta-data">
     <element name="meta-data">
       <ref name="meta-data.attlist"/>

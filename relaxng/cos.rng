@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- This is a generic COS DTD, based on IOML 2.0 and COSML 1.0. -->
-<!-- COSML DTD 2.0 -->
-<!-- Ari Nordstr&#x00F6;m, Condesign Operations Support AB -->
-<!-- Root Element Name -->
-<!-- ================= -->
-<!-- Entities Modules -->
-<!-- ================ -->
 <grammar xmlns="http://relaxng.org/ns/structure/1.0">
+  <!-- This is a generic COS DTD, based on IOML 2.0 and COSML 1.0. -->
+  <!-- COSML DTD 2.0 -->
+  <!-- Ari Nordstr&#x00F6;m, Condesign Operations Support AB -->
+  <!-- Root Element Name -->
+  <!-- ================= -->
+  <!-- Entities Modules -->
+  <!-- ================ -->
   <include href="entities.mod.rng"/>
   <!-- ===================== -->
   <!-- Top Level Definitions -->
@@ -34,6 +34,9 @@
   <start>
     <choice>
       <ref name="cos"/>
+      <ref name="section"/>
+      <ref name="admonishment"/>
+      <ref name="block"/>
     </choice>
   </start>
 </grammar>

@@ -1,26 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- ====================================================================== -->
-<!--
-  CALS Table Model XML V1.0
-  Part of the DocBk30 XML V1.0 DTD
-  http://nwalsh.com/docbook/
-  
-  See COPYRIGHT for more information
-  
-  Please direct all questions and comments about this DTD to
-  Norman Walsh, <ndw@nwalsh.com>.
-  
-  This DTD is based on the CALS Table Model
-  PUBLIC "-//USA-DOD//DTD Table Model 951010//EN"
--->
-<!-- ====================================================================== -->
-<!--
-  These definitions are not directly related to the table model, but are 
-  used in the default CALS table model and are usually defined elsewhere 
-  (and prior to the inclusion of this table module) in a CALS DTD.
--->
-<!-- Changes for COSML 1.0, 2.0 in entites.mod. -->
 <grammar xmlns="http://relaxng.org/ns/structure/1.0">
+  <!-- ====================================================================== -->
+  <!--
+    CALS Table Model XML V1.0
+    Part of the DocBk30 XML V1.0 DTD
+    http://nwalsh.com/docbook/
+    
+    See COPYRIGHT for more information
+    
+    Please direct all questions and comments about this DTD to
+    Norman Walsh, <ndw@nwalsh.com>.
+    
+    This DTD is based on the CALS Table Model
+    PUBLIC "-//USA-DOD//DTD Table Model 951010//EN"
+  -->
+  <!-- ====================================================================== -->
+  <!--
+    These definitions are not directly related to the table model, but are 
+    used in the default CALS table model and are usually defined elsewhere 
+    (and prior to the inclusion of this table module) in a CALS DTD.
+  -->
+  <!-- Changes for COSML 1.0, 2.0 in entites.mod. -->
   <define name="bodyatt">
     <empty/>
   </define>

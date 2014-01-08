@@ -26,4 +26,4 @@ cos.attlist &= doc.element.att, applic.att, common.att
 include "calstblx.mod.rnc"
 include "meta-data.mod.rnc"
 include "elements.mod.rnc"
-start = cos
+start = cos | section | admonishment | block
