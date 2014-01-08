@@ -71,7 +71,7 @@
 
     <xsl:param name="page.margin.inner">
         <xsl:choose>
-            <xsl:when test="$double.sided != 0">
+            <xsl:when test="$double.sided != '0'">
                 <xsl:if test="$paper.type='A4'">20mm</xsl:if>
                 <xsl:if test="$paper.type='A5'">10mm</xsl:if>
             </xsl:when>
@@ -81,7 +81,7 @@
 
     <xsl:param name="page.margin.outer">
         <xsl:choose>
-            <xsl:when test="$double.sided != 0">
+            <xsl:when test="$double.sided != '0'">
                 <xsl:if test="$paper.type='A4'">10mm</xsl:if>
                 <xsl:if test="$paper.type='A5'">5mm</xsl:if>
             </xsl:when>
@@ -90,19 +90,8 @@
     </xsl:param>
 
     <xsl:param name="body.margin.bottom">
-        <xsl:choose>
-            <!-- Envac demo -->
-            <xsl:when test="$demo = 'envac'">
-                <xsl:if test="$paper.type='A4'">13mm</xsl:if>
-                <xsl:if test="$paper.type='A5'">13mm</xsl:if>
-            </xsl:when>
-            <!-- COS Standard -->
-            <xsl:otherwise>
-                <xsl:if test="$paper.type='A4'">30mm</xsl:if>
-                <xsl:if test="$paper.type='A5'">20mm</xsl:if>
-            </xsl:otherwise>
-        </xsl:choose>
-
+        <xsl:if test="$paper.type='A4'">30mm</xsl:if>
+        <xsl:if test="$paper.type='A5'">20mm</xsl:if>
     </xsl:param>
 
     <xsl:param name="body.margin.top">
@@ -112,7 +101,7 @@
 
     <xsl:param name="body.margin.inner">
         <xsl:choose>
-            <xsl:when test="$double.sided != 0">
+            <xsl:when test="$double.sided != '0'">
                 <xsl:if test="$paper.type='A4'">
                     <xsl:value-of select="'30mm'"/>
                 </xsl:if>
@@ -126,7 +115,7 @@
 
     <xsl:param name="body.margin.outer">
         <xsl:choose>
-            <xsl:when test="$double.sided != 0">
+            <xsl:when test="$double.sided != '0'">
                 <xsl:if test="$paper.type='A4'">
                     <xsl:value-of select="'25mm'"/>
                 </xsl:if>
@@ -239,7 +228,7 @@
     </xsl:param>
 
     <xsl:param name="heading1-font-size">
-        <xsl:value-of select="substring-before($body-font-size, 'pt') * 1.5"/>
+        <xsl:value-of select="number(substring-before($body-font-size, 'pt')) * 1.5"/>
         <xsl:text>pt</xsl:text>
     </xsl:param>
 
