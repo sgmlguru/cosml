@@ -35,7 +35,6 @@
         <file name="fo/layout.xsl"/>
         <file name="fo/list.xsl"/>
         <file name="fo/meta-data.xsl"/>
-        <file name="fo/normalize.xsl"/>
         <file name="fo/param.xsl"/>
         <file name="fo/sections.xsl"/>
         <file name="fo/static-content.xsl"/>
