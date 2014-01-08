@@ -1,0 +1,251 @@
+<?xml version="1.0"?>
+
+<strings>
+
+  <string xml:lang="en" name="Table of Contents">Table of Contents</string>
+  <string xml:lang="sv" name="Table of Contents">Innehållsförteckning</string>
+  <string xml:lang="de" name="Table of Contents">Inhaltsverzeichnis</string>
+  <string xml:lang="ar" name="Table of Contents">المحتويات</string><!-- Check! -->
+  <string xml:lang="fa" name="Table of Contents">فهرست مطالب</string>
+  <string xml:lang="he" name="Table of Contents">תוכן עניינים</string>
+  <string xml:lang="es-ES" name="Table of Contents">Índice</string>
+  
+  <string xml:lang="en" name="Quotation">Quotation</string>
+  <string xml:lang="sv" name="Quotation">Offert</string>
+  <string xml:lang="es-ES" name="Quotation">Cotización</string>
+  
+  <string xml:lang="en" name="Order Confirmation">Order Confirmation</string>
+  <string xml:lang="sv" name="Order Confirmation">Orderbekräftelse</string>
+  <string xml:lang="es-ES" name="Order Confirmation">Confirmación del pedido</string>
+  
+  <string xml:lang="en" name="Whitepaper">Whitepaper</string>
+  <string xml:lang="sv" name="Whitepaper">Whitepaper</string>
+  <string xml:lang="es-ES" name="Whitepaper">Informe detallado</string>
+  
+  <string xml:lang="en" name="Use Cases">Use Cases</string>
+  <string xml:lang="sv" name="Use Cases">Användarfall</string>
+  <string xml:lang="es-ES" name="Use Cases">Casos de Uso</string>
+  
+  <string xml:lang="en" name="Test Specification">Test Specification</string>
+  <string xml:lang="sv" name="Test Specification">Testspecifikation</string>
+  <string xml:lang="es-ES" name="Test Specification">Especificación de ensayo</string>
+  
+  <string xml:lang="en" name="System Specification">System Specification</string>
+  <string xml:lang="sv" name="System Specification">Systemspecifikation</string>
+  <string xml:lang="sv" name="System Specification">Especificación del sistema</string>
+
+  <string xml:lang="en" name="Abstract">Abstract</string>
+  <string xml:lang="sv" name="Abstract">Sammanfattning</string>
+  <string xml:lang="es-ES" name="Abstract">Resumen</string>
+  
+  <string xml:lang="en" name="About the Document">About the Document</string>
+  <string xml:lang="sv" name="About the Document">Om detta dokument</string>
+  <string xml:lang="es-ES" name="About the Document">Acerca de este documento</string>
+  
+  <string xml:lang="en" name="Document number">Document number:</string>
+  <string xml:lang="sv" name="Document number">Dokumentnummer:</string>
+  <string xml:lang="es-ES" name="Document number">Nº doc.:</string>
+  
+  <string xml:lang="en" name="Document title">Document Title:</string>
+  <string xml:lang="sv" name="Document title">Titel:</string>
+  <string xml:lang="es-ES" name="Document title">Título del documento:</string>
+  
+  <string xml:lang="en" name="Written by">Written By:</string>
+  <string xml:lang="sv" name="Written by">Av:</string>
+  <string xml:lang="es-ES" name="Written by">Autor:</string>
+  
+  <string xml:lang="en" name="Recipient">Recipient:</string>
+  <string xml:lang="sv" name="Recipient">Mottagare:</string>
+
+  <string xml:lang="en" name="Revision">Revision:</string>
+  <string xml:lang="sv" name="Revision">Revision:</string>
+  
+  <string xml:lang="en" name="Revision date">Revision date:</string>
+  <string xml:lang="sv" name="Revision date">Revisionsdatum:</string>
+  <string xml:lang="es-ES" name="Revision date">Fecha de revisión</string>
+  
+  <string xml:lang="en" name="Appendices">Appendices</string>
+  <string xml:lang="sv" name="Appendices">Bilagor</string>
+  <string xml:lang="es-ES" name="Appendices">Apéndices</string>
+  
+  <string xml:lang="en" name="Appendix">Appendix</string>
+  <string xml:lang="sv" name="Appendix">Bilaga</string>
+  <string xml:lang="es-ES" name="Appendix">Apéndice</string>
+
+  <string xml:lang="en" name="Glossary">Glossary</string>
+  <string xml:lang="sv" name="Glossary">Ordlista</string>
+  <string xml:lang="es-ES" name="Glossary">Glosario</string>
+
+  <string xml:lang="en" name="Index">Index</string>
+  <string xml:lang="sv" name="Index">Index</string>
+  <string xml:lang="ar" name="Index">الفهرس</string>
+  <string xml:lang="fa" name="Index">فهرست موضوعی</string>
+  <string xml:lang="he" name="Index">מפתח עניינים</string>
+
+  <string xml:lang="en" name="References">Reference List</string>
+  <string xml:lang="sv" name="References">Referenser</string>
+  <string xml:lang="es-ES" name="References">Lista de referencia</string>
+  
+
+  <string xml:lang="en" name="ref-doc">Reference</string>
+  <string xml:lang="sv" name="ref-doc">Referens</string>
+  <string xml:lang="es-ES" name="ref-doc">Referencia</string>
+
+  <!--string xml:lang="en" name="References-intro">The following documents have been referenced in this document:</string-->
+  <string xml:lang="en" name="References-intro"></string>
+  <string xml:lang="sv" name="References-intro"></string>
+
+  <string xml:lang="en" name="Table">Table</string>
+  <string xml:lang="sv" name="Table">Tabell</string>
+  <string xml:lang="es-ES" name="Table">Tabla</string>
+
+  <string xml:lang="en" name="table">Table</string>
+  <string xml:lang="sv" name="table">Tabell</string>
+  <string xml:lang="es-ES" name="table">Tabla</string>
+
+  <string xml:lang="en" name="Example">Example</string>
+  <string xml:lang="sv" name="Example">Exempel</string>
+  <string xml:lang="es-ES" name="Example">Ejemplo</string>
+
+  <string xml:lang="en" name="example">Example</string>
+  <string xml:lang="sv" name="example">Exempel</string>
+  <string xml:lang="es-ES" name="example">Ejemplo</string>
+
+  <string xml:lang="en" name="Figure">Figure</string>
+  <string xml:lang="sv" name="Figure">Figur</string>
+  <string xml:lang="es-ES" name="Figure">Figura</string>
+
+  <string xml:lang="en" name="figure">Figure</string>
+  <string xml:lang="sv" name="figure">Figur</string>
+  <string xml:lang="es-ES" name="figure">Figura</string>
+  
+  <string xml:lang="sv" name="Position">Position</string>
+  <string xml:lang="en" name="Position">Position</string>
+  <string xml:lang="es-ES" name="Position">Posición</string>
+  
+  <string xml:lang="en-GB" name="Step">Step</string>
+  <string xml:lang="sv-SE" name="Step">Steg</string>
+  <string xml:lang="de-DE" name="Step">Schritt</string>
+  <string xml:lang="fr-FR" name="Step">Étape</string>
+  <string xml:lang="ru-RU" name="Step">Шаг</string>
+  <string xml:lang="es-ES" name="Step">Paso</string>
+  <string xml:lang="pt-PT" name="Step">Passo</string>
+
+  <string xml:lang="en" name="Caution">Caution!</string>
+  <string xml:lang="sv" name="Caution">Obs!</string>
+  <string xml:lang="fa" name="Caution">احتياط!</string>
+  <string xml:lang="ar" name="Caution">تنبيه!</string>
+  <string xml:lang="he" name="Caution">זהירות!</string>
+  <string xml:lang="es-ES" name="Caution">Precaución</string>
+
+  <string xml:lang="en" name="Warning">Warning!</string>
+  <string xml:lang="sv" name="Warning">Varning!</string>
+  <string xml:lang="fa" name="Warning">هشدار!</string>
+  <string xml:lang="ar" name="Warning">تحذير!</string>
+  <string xml:lang="he" name="Warning">אזהרה!</string>
+  <string xml:lang="es-ES" name="Warning">Advertencia</string>
+  
+  <string xml:lang="en" name="Danger">Danger!</string>
+  <string xml:lang="sv" name="Danger">Fara!</string>
+  <string xml:lang="fa" name="Danger">خطر!</string>
+  <string xml:lang="ar" name="Danger">خطر!</string>
+  <string xml:lang="he" name="Danger">סכנה!</string>
+  <string xml:lang="es-ES" name="Danger">Peligro</string>
+
+  <string xml:lang="en" name="Note">Note:</string>
+  <string xml:lang="sv" name="Note">Not:</string>
+  <string xml:lang="fa" name="Note">توجه!</string>
+  <string xml:lang="ar" name="Note">ملاحظة!</string>
+  <string xml:lang="he" name="Note">שים לב!</string>
+  <string xml:lang="es-ES" name="Note">Nota: </string>
+
+  <string xml:lang="en" name="Section">Section</string>
+  <string xml:lang="sv" name="Section">Avsnitt</string>
+  <string xml:lang="es-ES" name="Section">Sección</string>
+
+  <string xml:lang="en" name="Section-no-number">The section called</string>
+  <string xml:lang="sv" name="Section-no-number">Avsnittet</string>
+  <string xml:lang="es-ES" name="Section-no-number">La sección llamada</string>
+
+  <string xml:lang="en" name="page">Page</string>
+  <string xml:lang="sv" name="page">sidan</string>
+  <string xml:lang="es-ES" name="page">Página </string>
+  
+  <string xml:lang="es-ES" name="on Page"> en la página </string>
+  
+  <!-- Page standard text -->
+  <string xml:lang="en" name="Page">Page </string>
+  <string xml:lang="sv" name="Page">Sidan </string>
+  <string xml:lang="es-ES" name="Page">Página </string>
+  
+  <!-- Page count, "Page X of (page count)" text -->
+  <string xml:lang="en" name="of"> of </string>
+  <string xml:lang="sv" name="of"> av </string>
+  <string xml:lang="es-ES" name="of"> de </string>
+
+  <string xml:lang="en" name="startquote">&#x201C;</string>
+  <string xml:lang="sv" name="startquote">&#x201D;</string>
+  <string xml:lang="es-ES" name="startquote">&#x201D;</string>
+
+  <string xml:lang="en" name="endquote">&#x201D;</string>
+  <string xml:lang="sv" name="endquote">&#x201D;</string>
+  <string xml:lang="es-ES" name="endquote">&#x201D;</string>
+  
+  <string xml:lang="en" name="See">See</string>
+  <string xml:lang="sv" name="See">Se</string>
+  <string xml:lang="ar" name="See">انظر</string>
+  <string xml:lang="fa" name="See">مراجعه کنيد به</string>
+  <string xml:lang="he" name="See">ראה</string>
+  
+  <string xml:lang="en" name="See also">See also</string>
+  <string xml:lang="sv" name="See also">Se även</string>
+  <string xml:lang="ar" name="See also">انظر أيضًا</string>
+  <string xml:lang="fa" name="See also">همچنين مراجعه کنيد به</string>
+  <string xml:lang="he" name="See also">ראה גם</string>
+
+  <string xml:lang="en" name="copyright-text">This publication is copyrighted by Condesign Operations Support AB with all rights reserved. No part of this publication may be reproduced, transmitted, transcribed, stored on a retrieval system or  translated into any other language or computer language, in whole or part, in any form or by means, whether it be electronic, mechanical, magnetic, optical, manual or otherwise without the prior written consent of the copyright holder.</string>
+  <string xml:lang="sv" name="copyright-text">Plats för svensk copyright-text.</string>
+
+  <string xml:lang="en" name="trademark-list">List of Trademarks</string>
+  <string xml:lang="sv" name="trademark-list">Lista över varumärken</string>
+  <string xml:lang="es-ES" name="trademark-list">Lista de Marcas</string>
+  
+
+  <string xml:lang="en" name="footer-text">Condesign Operations Support AB</string>
+  <string xml:lang="sv" name="footer-text">Condesign Operations Support AB</string>
+  <string xml:lang="es-ES" name="footer-text">Condesign Operations Support AB</string>
+  
+  
+  <!-- Standard texts in COS doc footer -->
+  
+  <string xml:lang="en" name="Address">Postal and Visiting Address</string>
+  <string xml:lang="sv" name="Address">Post- och besöksadress</string>
+  
+  <string xml:lang="en" name="Registered Office">Registered Office</string>
+  <string xml:lang="sv" name="Registered Office">Styrelsens säte</string>
+  
+  <string xml:lang="en" name="Registered No">Registered No</string>
+  <string xml:lang="sv" name="Registered No">Organisationsnummer</string>
+  
+  <string xml:lang="en" name="Document No">Document Number</string>
+  <string xml:lang="sv" name="Document No">Dokumentnummer</string>
+  
+  
+  
+  <!-- HTML Help strings -->
+  <string xml:lang="en" name="backmatter">Back matter</string>
+  <string xml:lang="sv" name="backmatter">Ordlista och referenser</string>
+  
+  <string xml:lang="en" name="Disclaimer">Disclaimer</string>
+  <string xml:lang="sv" name="Disclaimer">Disclaimer</string>
+
+  <string xml:lang="en" name="PDF version">PDF version</string>
+  <string xml:lang="sv" name="PDF version">PDF-version</string>
+  
+  
+  <!-- Demo ENVAC -->
+  <string xml:lang="sv-SE" name="build-guidelines">Bygg- och anläggningsanvisningar</string>
+  <string xml:lang="en-GB" name="build-guidelines">Building and Construction Guidelines</string>
+ 
+</strings>
+
