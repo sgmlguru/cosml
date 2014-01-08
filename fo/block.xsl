@@ -1,21 +1,42 @@
 <?xml version="1.0" encoding="utf-8"?>
-<xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
-    xmlns:fo="http://www.w3.org/1999/XSL/Format" xmlns:xlink="http://www.w3.org/1999/xlink"
-    xmlns:svg="http://www.w3.org/2000/svg" version="1.0" exclude-result-prefixes="svg">
+<xsl:stylesheet 
+    xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+    xmlns:fo="http://www.w3.org/1999/XSL/Format" 
+    xmlns:xlink="http://www.w3.org/1999/xlink"
+    xmlns:svg="http://www.w3.org/2000/svg" 
+    version="2.0" 
+    exclude-result-prefixes="svg">
 
-    <!-- MJ: the predicate eliminates annoying "ambiguous rule match" messages from Saxon -->
-    <!-- Maybe this can be fixed in a nicer way -->
+    
+    <!-- Block-level element handling -->
+    
+
 
     <xsl:template
-        match="p[not(parent::list or parent::step or parent::list-item or parent::entry or parent::definition or parent::ref-item or parent::admonishment or parent::note or parent::section/@xml:lang='he' or parent::abstract)]">
-        <fo:block font-family="{$body-font-family}" space-before="7pt" space-after="7pt"
+        match="p[not(parent::list or 
+        parent::step or 
+        parent::list-item or 
+        parent::entry or 
+        parent::definition or 
+        parent::ref-item or 
+        parent::admonishment or 
+        parent::note or 
+        parent::section/@xml:lang='he' or 
+        parent::abstract)]">
+        <fo:block 
+            font-family="{$body-font-family}" 
+            space-before="7pt" 
+            space-after="7pt"
             line-height-shift-adjustment="disregard-shifts">
             <xsl:apply-templates/>
         </fo:block>
     </xsl:template>
 
     <xsl:template match="p[parent::abstract]">
-        <fo:block font-family="sans-serif" space-before="7pt" space-after="7pt">
+        <fo:block 
+            font-family="sans-serif" 
+            space-before="7pt" 
+            space-after="7pt">
             <xsl:apply-templates/>
         </fo:block>
     </xsl:template>
@@ -23,7 +44,11 @@
 
     <!-- Test: Hebrew -->
     <xsl:template match="p[parent::section/@xml:lang='he']">
-        <fo:block font-family="Tahoma" direction="rtl" space-before="7pt" space-after="7pt">
+        <fo:block 
+            font-family="Tahoma" 
+            direction="rtl" 
+            space-before="7pt" 
+            space-after="7pt">
             <xsl:apply-templates/>
         </fo:block>
     </xsl:template>
@@ -127,8 +152,13 @@
 
 
     <xsl:template match="code-block">
-        <fo:block xsl:use-attribute-sets="indented-block-properties" font-family="Courier"
-            font-size="7pt" white-space="pre" wrap-option="wrap" linefeed-treatment="preserve"
+        <fo:block 
+            xsl:use-attribute-sets="indented-block-properties" 
+            font-family="Courier"
+            font-size="7pt" 
+            white-space="pre" 
+            wrap-option="wrap" 
+            linefeed-treatment="preserve"
             white-space-collapse="false">
             <xsl:apply-templates/>
         </fo:block>
@@ -222,12 +252,18 @@
     <!-- Examples -->
     <!-- ======== -->
     <xsl:template match="example">
-        <fo:block space-before="12pt" space-after="20pt" id="{generate-id(.)}">
+        <fo:block 
+            space-before="12pt" 
+            space-after="20pt" 
+            id="{generate-id(.)}">
 
             <xsl:apply-templates select="caption"/>
 
-            <fo:block border-before-style="solid" border-after-style="solid"
-                border-before-width="0.3pt" border-after-width="0.3pt">
+            <fo:block 
+                border-before-style="solid" 
+                border-after-style="solid"
+                border-before-width="0.3pt" 
+                border-after-width="0.3pt">
 
                 <xsl:apply-templates select="*[not(self::caption)]"/>
             </fo:block>
@@ -236,7 +272,10 @@
     </xsl:template>
 
     <xsl:template match="caption[parent::example]">
-        <fo:block space-before="10pt" space-after="4pt" keep-with-next.within-page="always">
+        <fo:block 
+            space-before="10pt" 
+            space-after="4pt" 
+            keep-with-next.within-page="always">
             <fo:inline font-style="italic">
                 <xsl:call-template name="getString">
                     <xsl:with-param name="stringName" select="'Example'"/>
@@ -261,6 +300,8 @@
         </fo:block>
 
     </xsl:template>
+
+
 
     <!-- Figures -->
     <!-- ======= -->
@@ -484,7 +525,9 @@
 
 
     <xsl:template match="caption[parent::figure]">
-        <fo:block space-before="4pt" keep-with-previous="always">
+        <fo:block 
+            space-before="4pt" 
+            keep-with-previous="always">
             <fo:inline font-style="italic">
                 <xsl:call-template name="getString">
                     <xsl:with-param name="stringName" select="'Figure'"/>
@@ -510,8 +553,11 @@
     </xsl:template>
 
     <xsl:template match="poslist">
-        <fo:list-block font-size="8pt" font-family="{$heading-font-family}"
-            keep-together.within-column="always" margin-top="6pt">
+        <fo:list-block 
+            font-size="8pt" 
+            font-family="{$heading-font-family}"
+            keep-together.within-column="always" 
+            margin-top="6pt">
             <xsl:apply-templates/>
         </fo:list-block>
     </xsl:template>

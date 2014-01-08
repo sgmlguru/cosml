@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
     xmlns:fo="http://www.w3.org/1999/XSL/Format" xmlns:xlink="http://www.w3.org/1999/xlink"
-    version="1.0">
+    version="2.0">
 
     <!-- demo.xsl -->
     <!-- This stylesheet is for demo purposes. Templates in demo stylesheets are invoked

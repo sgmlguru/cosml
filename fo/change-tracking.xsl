@@ -4,7 +4,7 @@
     xmlns:xd="http://www.oxygenxml.com/ns/doc/xsl"
     xmlns:fo="http://www.w3.org/1999/XSL/Format"
     xmlns:xlink="http://www.w3.org/1999/xlink"
-    version="1.0">
+    version="2.0">
     
     <xd:doc scope="stylesheet">
         <xd:desc>

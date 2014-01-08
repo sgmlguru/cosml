@@ -3,10 +3,9 @@
     xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
     xmlns:fo="http://www.w3.org/1999/XSL/Format"
     xmlns:xlink="http://www.w3.org/1999/xlink"
-    version="1.0">
+    version="2.0">
     
-    <!-- Handling of sections and section titles in body and back.
-         Note that some demo templates have alternate stylesheets. -->
+    <!-- Handling of sections and section titles in body and back. -->
     
     
     

@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<!-- XSLT stylesheet for conversion of COSML 1.0 documents to XSL FO -->
+<!-- XSLT stylesheet for conversion of COSML 2.0 documents to XSL FO -->
 <!-- Driver for the "internal" version: no cover page, fewer pagebreaks -->
 
-<!-- Based on IOML 1.0/2.0 stylesheets. -->
-
-<xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
-    xmlns:fo="http://www.w3.org/1999/XSL/Format" xmlns:xlink="http://www.w3.org/1999/xlink"
-    version="1.0">
+<xsl:stylesheet 
+    xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+    xmlns:fo="http://www.w3.org/1999/XSL/Format" 
+    xmlns:xlink="http://www.w3.org/1999/xlink"
+    version="2.0">
 
 
     <xsl:import href="param.xsl"/>
