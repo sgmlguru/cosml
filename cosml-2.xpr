@@ -18,6 +18,7 @@
             <file name="dtd/cos.dtd"/>
             <file name="relaxng/cos.rnc"/>
         </folder>
+        <file name="xml/block-inset1.xml"/>
         <file name="dtd/calstblx.mod"/>
         <file name="relaxng/calstblx.mod.rnc"/>
         <file name="dtd/catalog"/>
@@ -28,7 +29,12 @@
         <file name="relaxng/elements.mod.rnc"/>
         <file name="dtd/entities.mod"/>
         <file name="relaxng/entities.mod.rnc"/>
+        <file name="xml/inset1.xml"/>
+        <file name="xml/inset2.xml"/>
+        <file name="xml/inset3.xml"/>
+        <file name="xml/inset4.xml"/>
         <file name="dtd/meta-data.mod"/>
         <file name="relaxng/meta-data.mod.rnc"/>
+        <file name="xml/test-root.xml"/>
     </projectTree>
 </project>

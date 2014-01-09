@@ -10,16 +10,16 @@
                         <scenarioAssociation-array>
                             <scenarioAssociation>
                                 <field name="url">
-                                    <String>xslt/normalize-2.xsl</String>
+                                    <String>oxygen:/eXist%202.1%20sgmlguru.org$eXist%20sgmlguru.org%20Connection/db/work/docs/xq/pdf-test.xq</String>
                                 </field>
                                 <field name="scenarioIds">
                                     <list>
-                                        <String>normalize-2</String>
+                                        <String>pdf-test</String>
                                     </list>
                                 </field>
                                 <field name="scenarioTypes">
                                     <list>
-                                        <String>XML</String>
+                                        <String>XQUERY</String>
                                     </list>
                                 </field>
                             </scenarioAssociation>
@@ -33,7 +33,7 @@
                                     <null/>
                                 </field>
                                 <field name="name">
-                                    <String>normalize-2</String>
+                                    <String>pdf-test</String>
                                 </field>
                                 <field name="baseURL">
                                     <String></String>
@@ -51,10 +51,10 @@
                                     <String></String>
                                 </field>
                                 <field name="inputXSLURL">
-                                    <String>file:/mnt/win7-work/SGML/DTD/cosml/xslt/normalize-2.xsl</String>
+                                    <String>oxygen:/eXist%202.1%20sgmlguru.org$eXist%20sgmlguru.org%20Connection/db/work/docs/xq/pdf-test.xq</String>
                                 </field>
                                 <field name="inputXMLURL">
-                                    <String>file:/mnt/win7-work/SGML/DTD/Process-XML/XSLT/test-root.xml</String>
+                                    <null/>
                                 </field>
                                 <field name="defaultScenario">
                                     <Boolean>false</Boolean>
@@ -63,7 +63,7 @@
                                     <Boolean>false</Boolean>
                                 </field>
                                 <field name="type">
-                                    <String>XML</String>
+                                    <String>XQUERY</String>
                                 </field>
                                 <field name="saveAs">
                                     <Boolean>true</Boolean>
@@ -81,7 +81,7 @@
                                     <null/>
                                 </field>
                                 <field name="openInEditor">
-                                    <Boolean>true</Boolean>
+                                    <Boolean>false</Boolean>
                                 </field>
                                 <field name="showInHTMLPane">
                                     <Boolean>false</Boolean>
@@ -93,7 +93,7 @@
                                     <Boolean>false</Boolean>
                                 </field>
                                 <field name="showInResultSetPane">
-                                    <Boolean>false</Boolean>
+                                    <Boolean>true</Boolean>
                                 </field>
                                 <field name="useXSLTInput">
                                     <Boolean>true</Boolean>
@@ -105,7 +105,7 @@
                                     <String-array/>
                                 </field>
                                 <field name="xslTransformer">
-                                    <String>Saxon-PE</String>
+                                    <String>eXist sgmlguru.org Connection</String>
                                 </field>
                                 <field name="extensionURLs">
                                     <String-array/>
@@ -117,9 +117,5 @@
             </serialized>
         </options>
     </meta>
-    <projectTree name="cosml-2-xslt.xpr">
-        <file name="xslt/cosml2html-ti.xsl"/>
-        <file name="xslt/link-target-check-multifile.xsl"/>
-        <file name="xslt/normalize-2.xsl"/>
-    </projectTree>
+    <projectTree name="tests.xpr"/>
 </project>
