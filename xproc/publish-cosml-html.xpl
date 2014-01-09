@@ -1,23 +1,20 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<p:declare-step 
-    name="pub" 
-    xmlns:p="http://www.w3.org/ns/xproc"
-    xmlns:c="http://www.w3.org/ns/xproc-step" 
-    xmlns:cos="http://www.cassis.nu/cos"
-    version="1.0">
+<p:declare-step xmlns:cos="http://www.cassis.nu/cos" xmlns:c="http://www.w3.org/ns/xproc-step" xmlns:p="http://www.w3.org/ns/xproc" xmlns:cx="http://xmlcalabash.com/ns/extensions" name="pub" version="1.0">
     
     
     <!-- Input document -->
-    <p:input port="document"/>
+    <p:input port="document">
+        <!--<p:document href="http://www.sgmlguru.org/exist/rest/db/work/docs/pdftest/test-root.xml"/>-->
+    </p:input>
     
     <!-- XSLT COSML2HTML -->
-    <p:input port="stylesheet"/>
+    <p:input port="stylesheet">
+        <!--<p:document href="http://www.sgmlguru.org/exist/rest/db/work/system/cosml/xslt/cosml2html-ti.xsl"/>-->
+    </p:input>
     
     <!-- Normalize -->
-    <p:input port="stylesheet-norm"/>
-    
-    <!-- Schema (COSML DTD) -->
-    <p:input port="schema"/>
+    <p:input port="stylesheet-norm">
+        <!--<p:document href="http://www.sgmlguru.org/exist/rest/db/work/system/cosml/xslt/normalize-2.xsl"/>-->
+    </p:input>
     
     <!-- Map URL -->
     <p:input port="map"/>
@@ -26,22 +23,18 @@
     <p:input port="xslt-params" kind="parameter"/>
     
     <!-- Options -->
+    <p:option name="normalized"/>
     <p:option name="htm"/>
     
+    
     <!-- Output ports -->
-    <p:output port="result-htm">
-        <p:pipe port="result" step="cosml-htm"/>
+    <p:output port="result">
+        <p:pipe port="result" step="xml2htm"/>
     </p:output>
     
     <!--<p:output port="validate">
         <p:pipe port="result" step="validate"></p:pipe>
     </p:output>-->
-    
-    
-    <!-- Loading documents -->
-    <!--<p:load name="norm-step">
-        <p:with-option name="href" select="$normalize-stylesheet"/>
-    </p:load>-->
     
     
     
@@ -57,21 +50,21 @@
             <p:pipe port="stylesheet-norm" step="pub"/>
         </p:input>
     </p:xslt>
-        
+    
     <!--<p:delete match="//*/@xml:base" name="del">
         <p:input port="source">
             <p:pipe port="result" step="filter"/>
         </p:input>
     </p:delete>-->
     
-    <p:store><!-- doctype-public="-//COS//DTD COSML 1.0//ISO10646" doctype-system="cos.dtd" -->
-        <p:with-option name="href" select="'debug-normalized.xml'"/><!-- //e:/SGML/DTD/Cassis/XProc/ -->
+    <p:store>
+        <p:with-option name="href" select="$normalized"/>
         <p:input port="source">
-            <p:pipe port="result" step="normalize"></p:pipe>
+            <p:pipe port="result" step="normalize"/>
         </p:input>
     </p:store>
-
-
+    
+    
     
     <!-- Validation -->
     <!--<p:try name="validate">
@@ -109,16 +102,17 @@
     <!-- Stores HTML -->
     <p:store name="store-html">
         <p:with-option name="href" select="$htm"/>
+        <p:input port="source">
+            <p:pipe port="result" step="xml2htm"/>
+        </p:input>
     </p:store>
     
     
     
     <!-- HTML result output from FO -->
-    <p:identity name="cosml-htm">
+    <!--<p:identity name="cosml-htm">
         <p:input port="source">
             <p:pipe port="result" step="xml2htm"/>
         </p:input>
-    </p:identity>
-    
-    
+    </p:identity>-->
 </p:declare-step>

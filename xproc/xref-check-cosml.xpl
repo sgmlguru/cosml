@@ -82,6 +82,9 @@
         <p:with-param name="file-list-url" select="$file-url">
             <p:empty/>
         </p:with-param>
+        <p:with-param name="files" select="/">
+            <p:pipe port="result" step="files"/>
+        </p:with-param>
         <p:input port="stylesheet">
             <p:pipe port="stylesheet" step="main"/>
         </p:input>
