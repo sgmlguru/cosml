@@ -243,7 +243,7 @@
 
     <!-- Path to directory containing standard images etc (note: trailing slash) -->
     <xsl:param name="standard.files.dir"
-        select="'http://ti-cos.cassis2.nu/portals/0/cos_root/template/cos/standard-images/'"/>
+        select="'http://www.sgmlguru.org/exist/rest/db/work/system/cosml/standard-images/'"/>
 
     <!-- Name of logotype image -->
     <xsl:param name="logo.image">logotyp.jpg</xsl:param>
