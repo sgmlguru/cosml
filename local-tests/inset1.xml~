@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="http://www.sgmlguru.org/exist/rest/db/work/system/cosml/relaxng/cos.rnc" type="application/relax-ng-compact-syntax"?>
+<section id="id1" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>Inset 1 Section</title>
+    <p>Inset 1 text.</p>
+    <inset xlink:href="urn:inset3#id3"/>
+</section>

@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="http://www.sgmlguru.org/exist/rest/db/work/system/cosml/relaxng/cos.rnc" type="application/relax-ng-compact-syntax"?>
+<admonishment type="warning" id="idb1">
+    <p>Inset 1 text.</p>
+</admonishment>
