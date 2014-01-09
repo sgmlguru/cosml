@@ -88,7 +88,20 @@
                 <xsl:copy-of select="@*[name(.) != 'id']"/>
             </xsl:otherwise>
         </xsl:choose>-->
-        <xsl:copy-of select="@*"/>
+        <!--<xsl:copy-of select="@*"/>-->
+        
+        <xsl:for-each select="@*">
+            <xsl:choose>
+                <xsl:when test="local-name(.) = 'id'">
+                    <!--<xsl:attribute name="id">
+                        <xsl:value-of select="."/>
+                    </xsl:attribute>-->
+                </xsl:when>
+                <xsl:otherwise>
+                    <xsl:copy-of select="."/>
+                </xsl:otherwise>
+            </xsl:choose>
+        </xsl:for-each>
     </xsl:template>
 
     <xsl:template match="section-group">

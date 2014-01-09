@@ -5,10 +5,11 @@
 <xsl:stylesheet 
 	xmlns:xsl="http://www.w3.org/1999/XSL/Transform" 
 	xmlns:xhtml="http://www.w3.org/1999/xhtml"
-	xmlns:xlink="http://www.w3.org/1999/xlink" exclude-result-prefixes="#all"
+	xmlns:xlink="http://www.w3.org/1999/xlink" 
+	exclude-result-prefixes="xlink xsl"
 	version="2.0">
 
-	<xsl:output indent="yes" method="xhtml"/>
+	<xsl:output indent="yes" encoding="UTF-8" method="xml"/>
 
 
 
