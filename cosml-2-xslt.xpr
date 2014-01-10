@@ -119,6 +119,7 @@
     </meta>
     <projectTree name="cosml-2-xslt.xpr">
         <file name="xslt/cosml2html-ti.xsl"/>
+        <file name="xslt/files-list.xsl"/>
         <file name="xslt/link-target-check-multifile.xsl"/>
         <file name="xslt/normalize-2.xsl"/>
     </projectTree>
