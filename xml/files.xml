@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<files>
+    <file>http://www.sgmlguru.org/exist/rest/db/work/docs/pdftest/test-root.xml</file>
+   <file>http://www.sgmlguru.org/exist/rest/db/work/docs/pdftest/inset1.xml</file>
+   <file>http://www.sgmlguru.org/exist/rest/db/work/docs/pdftest/inset3.xml</file>
+   <file>http://www.sgmlguru.org/exist/rest/db/work/docs/pdftest/block-inset1.xml</file>
+   <file>http://www.sgmlguru.org/exist/rest/db/work/docs/pdftest/inset4.xml</file>
+   <file>http://www.sgmlguru.org/exist/rest/db/work/docs/pdftest/inset2.xml</file>
+</files>
