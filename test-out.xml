@@ -1,0 +1,57 @@
+<cos>
+    <meta-data>
+        <doc-info>
+            <title>Title</title>
+        </doc-info>
+        <author>
+            <name>
+                <first>A</first>
+                <last>N</last>
+            </name>
+        </author>
+    </meta-data>
+    <body>
+        <section>
+            <title>Section 1 in root</title>
+            <p>Text in s1</p>
+            <p>TEST</p>
+            <figure>
+                <graphics xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="Balisage-logotype-2013.png"/>
+                <caption>Image 1</caption>
+            </figure>
+            <section id="id1">
+    <title>Inset 1 Section</title>
+    <p>Inset 1 text.</p>
+    <section id="id3">
+    <title>Inset 3 Section</title>
+    <p>Inset 3 text.</p>
+    <admonishment type="warning" id="idb1">
+    <p>Inset 1 text.</p>
+</admonishment>
+    <section id="id4">
+    <title>Inset 4 Section</title>
+    <p>Inset 4 text.</p>
+</section>
+</section>
+</section>
+        </section>
+        <section id="id2">
+    <title>Inset 2 Section</title>
+    <p>Inset 2 text. <xref>BROKEN LOCATOR: <locator xmlns:xlink="http://www.w3.org/1999/xlink" id="id-broken-locator" xlink:href="nonexistent.xml#no-id"/>.</xref>
+    </p>
+    <p>Bla bla.<xref> VALID LINK: <locator xmlns:xlink="http://www.w3.org/1999/xlink" id="valid-locator" xlink:href="http://www.sgmlguru.org/exist/rest/db/work/docs/pdftest/inset3.xml#id3"/>.</xref>
+    </p>
+    <section id="id3">
+    <title>Inset 3 Section</title>
+    <p>Inset 3 text.</p>
+    <admonishment type="warning" id="idb1">
+    <p>Inset 1 text.</p>
+</admonishment>
+    <section id="id4">
+    <title>Inset 4 Section</title>
+    <p>Inset 4 text.</p>
+</section>
+</section>
+</section>
+    </body>
+</cos>
