@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
-<?xml-model href="file:/home/ari/mystuff/SGML/DTD/Process-XML/RelaxNG/processes.rnc" type="application/relax-ng-compact-syntax"?>
+<?xml-model href="http://www.sgmlguru.org/exist/rest/db/work/system/prox/relaxng/processes.rnc" type="application/relax-ng-compact-syntax"?>
 <!--<!DOCTYPE processes SYSTEM "processes.dtd">-->
 <processes 
    id="processes-2013-4-9-16-53-8-39562387-" 
@@ -343,7 +343,7 @@
       </packages>
    </process>
    
-   <!-- Wep PublishingProcess -->
+   <!-- Wep Publishing Process -->
    <process id="id-web-process">
       <metadata id="metadata-2013-4-9-16-53-8-39562387-6">
          <title id="title-2013-4-9-16-53-8-39562387-6">Web Publishing</title>
