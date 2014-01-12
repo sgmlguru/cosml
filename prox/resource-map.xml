@@ -155,7 +155,7 @@
       <blueprints>
          <resource id="id-prox-blueprint">
             <urn>URN-OF-PROX-BLUEPRINT</urn>
-            <url>prox-blueprint.xml</url>
+             <url>http://www.sgmlguru.org/exist/rest/db/work/system/prox/xml/prox-blueprint.xml</url>
             <!--<url>file://prox-blueprint.xml</url>-->
             <type></type>
             <prox-id></prox-id>
@@ -168,8 +168,7 @@
       <instances>
          <resource id="id-prox-saved-instance">
             <urn>URN-OF-SAVED-PROX-INSTANCE</urn>
-            <!--<url>http://www.sgmlguru.org/exist/rest/db/work/system/prox/xml/prox-instance.xml</url>-->
-            <url>prox-instance.xml</url>
+             <url>file:///mnt/win7-work/SGML/DTD/cosml/tmp-prox-instance.xml</url>
             <type></type>
             <prox-id></prox-id>
          </resource>
@@ -422,8 +421,14 @@
             <resource>
                <urn>urn:x-cassis:r1:cos:00002731:sv-SE:0.1</urn>
                <url>http://www.sgmlguru.org/exist/rest/db/work/system/prox/xslt/prox2shell.xsl</url>
-               <prox-id>id-prox2bat</prox-id>
+               <prox-id>id-prox2shell</prox-id>
             </resource>
+             <!-- ProX Instance Conversion to XQ -->
+             <resource>
+                 <urn>urn:x-cassis:r1:cos:00012731:sv-SE:0.1</urn>
+                 <url>http://www.sgmlguru.org/exist/rest/db/work/system/prox/xslt/prox2xq.xsl</url>
+                 <prox-id>id-prox2xq</prox-id>
+             </resource>
             <!-- Engine parameters required by ProX to Shell Script conversion -->
             <resource>
                <urn>urn:x-cassis:r1:cos:00002734:sv-SE:0.1</urn>
@@ -440,8 +445,7 @@
             <!-- XForm for proX Blueprint Handling -->
             <resource>
                <urn>urn:prox:xform:0.1</urn>
-<!--               <url>http://www.sgmlguru.org/exist/rest/db/work/system/prox-xform.xml</url>-->
-               <url>http://www.sgmlguru/exist/rest/db/system/prox/xml/prox-xform.xml</url>
+               <url>http://www.sgmlguru.org/exist/rest/db/work/system/prox/xforms/prox-xform.xml</url>
                <prox-id>id-loc-xform</prox-id>
             </resource>
          </resources>
