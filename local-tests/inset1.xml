@@ -3,5 +3,8 @@
 <section id="id1" xmlns:xlink="http://www.w3.org/1999/xlink">
     <title>Inset 1 Section</title>
     <p>Inset 1 text.</p>
+    <figure>
+        <graphics xlink:href="http://localhost:8080/exist/rest/db/work/docs/pdftest/image4.jpg"/>
+    </figure>
     <inset xlink:href="file:///mnt/win7-work/SGML/DTD/cosml/local-tests/inset3.xml#id3"/>
 </section>

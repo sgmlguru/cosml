@@ -17,7 +17,7 @@
             <title>Section 1 in root</title>
             <p>Text in s1</p>
             <figure>
-                <graphics xlink:href="urn:image1"/>
+                <graphics xlink:href="http://localhost:8080/exist/rest/db/work/docs/pdftest/image3.jpg"/>
                 <caption>Image 1</caption>
             </figure>
             <inset xlink:href="file:///mnt/win7-work/SGML/DTD/cosml/local-tests/inset1.xml#id1"/>
