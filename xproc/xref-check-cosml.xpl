@@ -1,37 +1,30 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<p:declare-step 
-    name="main" 
-    xmlns:p="http://www.w3.org/ns/xproc"
-    xmlns:c="http://www.w3.org/ns/xproc-step" 
-    xmlns:cos="http://www.cassis.nu/cos"
-    version="1.0">
+<p:declare-step xmlns:cos="http://www.cassis.nu/cos" xmlns:c="http://www.w3.org/ns/xproc-step" xmlns:p="http://www.w3.org/ns/xproc" name="main" version="1.0">
     
     
     <!-- Inputs -->
     
     <!-- Resource map document -->
-    <p:input port="map">
-        <p:document href="http://www.sgmlguru.org/exist/rest/db/work/system/common/xml/resource-map.xml"/>
+    <p:input port="map" sequence="true">
+        <!--<p:document href="http://www.sgmlguru.org/exist/rest/db/work/system/common/xml/resource-map.xml"/>-->
     </p:input>
     
     <!-- XSLT link target check -->
-    <p:input port="stylesheet">
-        <p:document href="http://www.sgmlguru.org/exist/rest/db/work/system/cosml/xslt/link-target-check-multifile.xsl"/>
+    <p:input port="stylesheet" sequence="true">
+        <!--<p:document href="http://www.sgmlguru.org/exist/rest/db/work/system/cosml/xslt/link-target-check-multifile.xsl"/>-->
     </p:input>
     
     
     <!-- Parameters -->
-    
     <p:input port="xslt-params" kind="parameter"/>
     
     
     <!-- Options -->
     
     <!-- HTML report filename -->
-    <p:option name="htm" select="'file:///mnt/win7-work/SGML/DTD/cosml/xrefs-report-test.htm'"/>
+    <p:option name="htm"/><!--  select="'file:///mnt/win7-work/SGML/DTD/cosml/xrefs-report-test.htm'" -->
     
     <!-- File URL for files list (input to XSLT) -->
-    <p:option name="file-url" select="'file:///mnt/win7-work/SGML/DTD/cosml/files.xml'"/>
+    <p:option name="file-url"/><!--  select="'file:///mnt/win7-work/SGML/DTD/cosml/files.xml'" -->
     
     
     <!-- Output ports -->
@@ -51,14 +44,10 @@
         </p:input>
         <p:input port="stylesheet">
             <p:inline>
-                <xsl:stylesheet 
-                    xmlns:xsl="http://www.w3.org/1999/XSL/Transform" 
-                    exclude-result-prefixes="#all" 
-                    version="2.0">
+                <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" exclude-result-prefixes="#all" version="2.0">
                     <xsl:template match="/resource-map">
                         <files>
-                            <xsl:apply-templates 
-                                select="docs/doc/root/resource[type='doc-root']/url|docs/doc/modules/resource[type='xml']/url"/>
+                            <xsl:apply-templates select="docs/doc/root/resource[type='doc-root']/url|docs/doc/modules/resource[type='xml']/url"/>
                         </files>
                     </xsl:template>
                     <xsl:template match="url">
@@ -70,7 +59,6 @@
             </p:inline>
         </p:input>
     </p:xslt>
-    
     <p:store>
         <p:with-option name="href" select="$file-url"/>
     </p:store>
@@ -109,6 +97,4 @@
             <p:pipe port="result" step="xref-check"/>
         </p:input>
     </p:identity>
-    
-    
 </p:declare-step>

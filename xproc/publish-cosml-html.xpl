@@ -28,13 +28,9 @@
     
     
     <!-- Output ports -->
-    <p:output port="result">
-        <p:pipe port="result" step="xml2htm"/>
+    <p:output port="result" sequence="true">
+        <p:pipe port="result" step="cosml-htm"/>
     </p:output>
-    
-    <!--<p:output port="validate">
-        <p:pipe port="result" step="validate"></p:pipe>
-    </p:output>-->
     
     
     
@@ -56,7 +52,6 @@
             <p:pipe port="result" step="filter"/>
         </p:input>
     </p:delete>-->
-    
     <p:store>
         <p:with-option name="href" select="$normalized"/>
         <p:input port="source">
@@ -109,10 +104,14 @@
     
     
     
-    <!-- HTML result output from FO -->
-    <!--<p:identity name="cosml-htm">
+    <!-- HTML result output -->
+    <p:identity name="cosml-htm">
         <p:input port="source">
-            <p:pipe port="result" step="xml2htm"/>
+            <!--<p:pipe port="result" step="xml2htm"/>-->
+            <p:inline>
+                <p>Success!</p>
+            </p:inline>
         </p:input>
-    </p:identity>-->
+    </p:identity>
+    
 </p:declare-step>
