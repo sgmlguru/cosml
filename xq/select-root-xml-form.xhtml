@@ -1,5 +1,5 @@
 <?xml-model href="http://localhost:8080/exist/rest/db/work/system/nvdl/xhtml-xforms.nvdl" type="application/xml" schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0"?>
-<?xml-stylesheet href="xsltforms/xsltforms.xsl" type="text/xsl"?>
+<?xml-stylesheet href="http://localhost:8080/exist/rest/db/apps/xsltforms/xsltforms.xsl" type="text/xsl"?>
 <html 
     xmlns="http://www.w3.org/1999/xhtml" 
     xmlns:ev="http://www.w3.org/2001/xml-events" 
@@ -9,7 +9,7 @@
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
     <head>
         <title>Select Resource</title>
-        <link type="text/css" rel="stylesheet" href="style-sel.css"/>
+        <link type="text/css" rel="stylesheet" href="http://localhost:8080/exist/rest/db/apps/style-sel.css"/>
         <xf:model id="facts">
             <!-- Filter instance -->
             <xf:instance id="filtered">
@@ -22,7 +22,7 @@
             <!-- Add eXist instance(s) -->
             <xf:instance 
                 id="exist-data" 
-                src="http://localhost:8080/exist/rest/db/work/system/cosml/xq/list-root-xml.xq"><!-- http://31.216.36.169:8080/exist/rest/db -->
+                src="http://localhost:8080/exist/rest/db/work/system/cosml/xq/list-root-xml.xq">
                 <data xmlns="">
                     <item>
                         <string/>
@@ -54,10 +54,11 @@
                 id="move-on-server" 
                 method="post" 
                 action="../work/system/cosml/xq/selection.xq"
-                ref="instance('publish-files')"/><!-- http://31.216.36.169:8080/exist/rest/db -->
+                ref="instance('publish-files')"/>
             
         </xf:model>
     </head>
+    
     <body>
         <h2>Resources in /db/work</h2>
         <fieldset>
@@ -82,6 +83,7 @@
                     </xf:input>
                 </div>
                 
+                <!-- Type of resource -->
                 <div class="block-form">
                     <xf:select1 ref="instance('filtered')/texttype">
                         <xf:label>Select resource type</xf:label>
@@ -131,14 +133,6 @@
         </fieldset>
         
         <div/>
-        
-        <!--<xf:trigger>
-            <xf:label>Process selected resource</xf:label>
-            <xf:hint>Processes selected resource using the process selected in the next step.</xf:hint>
-            <xf:action ev:event="DOMActivate">
-                <xf:send submission="move-on-server"/>
-            </xf:action>
-        </xf:trigger>-->
         
         <!--<p>
             <!-\- Output deleted facts -\->

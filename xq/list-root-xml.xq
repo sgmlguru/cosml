@@ -6,14 +6,11 @@ declare namespace exist="http://exist.sourceforge.net/NS/exist";
 declare namespace util="http://exist-db.org/xquery/util";
 declare option exist:serialize "method=xml media-type=text/xml indent=no";
 
-(: let $filter := request:get-parameter('filter', '') :)
 
 (:let $login := xmldb:login('/db','admin','condesign')
 let $filter := request:get-parameter('filter', ''):)
-(:let $domain := "":)
+
 let $xml := collection(concat('/db/work/','docs'))
-(:let $work-mhs-stdtexts := collection(concat('/db/work/','mhs','/standard-texts'))
-let $work-rhs-facts := collection(concat('/db/lrf/work/','rhs','/facts')):)
 
 return <data>
     
@@ -21,7 +18,9 @@ return <data>
     for $doc in ($xml)
     order by base-uri($doc)
     
-    return if (contains(base-uri($doc),'.xml') and local-name($doc/*)='cos')
+    return 
+    
+    if (contains(base-uri($doc),'.xml') and local-name($doc/*)='cos')
         then <item> 
             <string>{tokenize(base-uri($doc),'/')[last()]} - root XML, ({base-uri($doc)})</string>
             <value>{base-uri($doc)}</value>

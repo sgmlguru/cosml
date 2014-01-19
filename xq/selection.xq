@@ -7,22 +7,21 @@ declare namespace exist="http://exist.sourceforge.net/NS/exist";
 declare namespace xmldb="http://exist-db.org/xquery/xmldb";
 
 let $login := xmldb:login('/db','admin','Favorit70')
-let $files := request:get-data()
+(:let $files := request:get-data():)
+
+
+
+let $files := <data> <value>/db/work/docs/pdftest/test-root.xml</value> </data>
 
 
 
 for $file in tokenize($files//value,' ')
-    (: Decide which domain to use in eXist :)
-    let $domain := if (contains($file,'rhs')) 
-      then 'rhs/'
-      else 'mhs/'
-    (: Facts or standard texts are the only allowed text types :)
-    let $targetparent := if (contains($file,'images')) 
-      then 'pub/images'
-      else if (contains($file,'standard-texts')) 
-      then 'export/standard-texts'
-      else ('export/facts')
+    
+    (: We only allow root XML as input :)
+    let $targetparent := if ((contains($file,'.xml') and local-name(doc($file)/*)='cos')) 
+      then ('docs/test')
+      else <p>File not XML or not root</p>
     let $filename := tokenize($file,'/')[last()]
-    let $move-db := xmldb:copy(substring-before($file,tokenize($file,'/')[last()]),concat('/db/lrf/',$domain,$targetparent),$filename)
+    (:let $move-db := xmldb:copy(substring-before($file,tokenize($file,'/')[last()]),concat('/db/work/',$targetparent),$filename):)
 
-return (<p>Publicerade till {concat('/db/lrf/',$domain,$targetparent,'/',$filename)}</p>)
+return (<p>Output: {concat('/db/work/',$targetparent,'/',$filename)}</p>)
