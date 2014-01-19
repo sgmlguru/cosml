@@ -22,6 +22,5 @@ for $file in tokenize($files//value,' ')
       then ('docs/test')
       else <p>File not XML or not root</p>
     let $filename := tokenize($file,'/')[last()]
-    (:let $move-db := xmldb:copy(substring-before($file,tokenize($file,'/')[last()]),concat('/db/work/',$targetparent),$filename):)
 
-return (<p>Output: {concat('/db/work/',$targetparent,'/',$filename)}</p>)
+return (<p>Input file: {$file}, Output file: {concat('/db/work/',$targetparent,'/',$filename)}</p>)

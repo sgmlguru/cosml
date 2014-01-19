@@ -9,8 +9,7 @@
     <xsl:output indent="yes" method="xml" encoding="UTF-8"/>
 
     <!-- Root XML URI -->
-    <xsl:param name="root-xml"
-        select="'file:///mnt/win7-work/SGML/DTD/cosml/local-tests/test-root.xml'"/>
+    <xsl:param name="root-xml"/><!-- select="'file:///mnt/win7-work/SGML/DTD/cosml/local-tests/test-root.xml'" -->
     
     <xsl:param name="tmp-base-uri" select="'xmldb:exist:///db/work/docs/test'"/>
     
