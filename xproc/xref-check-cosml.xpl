@@ -21,10 +21,12 @@
     <!-- Options -->
     
     <!-- HTML report filename -->
-    <p:option name="htm"/><!--  select="'file:///mnt/win7-work/SGML/DTD/cosml/xrefs-report-test.htm'" -->
+    <p:option name="htm"/>
     
     <!-- File URL for files list (input to XSLT) -->
-    <p:option name="file-url"/><!--  select="'file:///mnt/win7-work/SGML/DTD/cosml/files.xml'" -->
+    <p:option name="file-url">
+        <!-- No longer needed. Replaced by resource-map.xml. -->
+    </p:option>
     
     
     <!-- Output ports -->
@@ -34,49 +36,14 @@
     
     
     
-    <!-- Generate list of files to check -->
-    <p:xslt name="files">
-        <p:input port="source">
-            <p:pipe port="map" step="main"/>
-        </p:input>
-        <p:input port="parameters">
-            <p:pipe port="xslt-params" step="main"/>
-        </p:input>
-        <p:input port="stylesheet">
-            <p:inline>
-                <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" exclude-result-prefixes="#all" version="2.0">
-                    <xsl:template match="/resource-map">
-                        <files>
-                            <xsl:apply-templates select="docs/doc/root/resource[type='doc-root']/url|docs/doc/modules/resource[type='xml']/url"/>
-                        </files>
-                    </xsl:template>
-                    <xsl:template match="url">
-                        <file>
-                            <xsl:value-of select="."/>
-                        </file>
-                    </xsl:template>
-                </xsl:stylesheet>
-            </p:inline>
-        </p:input>
-    </p:xslt>
-    <p:store>
-        <p:with-option name="href" select="$file-url"/>
-    </p:store>
-    
-    
-    
-    
     <!-- Checks xrefs -->
     <p:xslt name="xref-check">
         <p:input port="source">
-            <p:pipe port="result" step="files"/>
+            <p:pipe port="map" step="main"/>
         </p:input>
-        <p:with-param name="file-list-url" select="$file-url">
-            <p:empty/>
+        <p:with-param name="map-url" select="base-uri()">
+            <p:pipe port="map" step="main"/>
         </p:with-param>
-        <!--<p:with-param name="files" select="/">
-            <p:pipe port="result" step="files"/>
-        </p:with-param>-->
         <p:input port="stylesheet">
             <p:pipe port="stylesheet" step="main"/>
         </p:input>

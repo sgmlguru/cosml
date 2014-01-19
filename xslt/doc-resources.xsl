@@ -12,6 +12,8 @@
     <xsl:param name="root-xml"
         select="'file:///mnt/win7-work/SGML/DTD/cosml/local-tests/test-root.xml'"/>
     
+    <xsl:param name="tmp-base-uri" select="'xmldb:exist:///db/work/docs/test'"/>
+    
     <!-- Resource map template -->
     <xsl:param 
         name="res-map-template" 
@@ -73,7 +75,8 @@
                 <xsl:call-template name="doc"/>        
             </docs>
             
-            <!-- Targets go here -->
+            <!-- Targets -->
+            <xsl:call-template name="targets"/>
             
             <!-- Standard resources -->
             <xsl:copy-of select="$res-map-template//prox | 
@@ -139,6 +142,43 @@
                     select="tokenize(@xlink:href,'\.')[last()]"/>
             </type>
         </resource>
+    </xsl:template>
+    
+    <!-- Targets -->
+    <xsl:template name="targets">
+        <targets>
+            <xsl:for-each select="$prox-blueprint//value[@type = 'external' and @mimetype and @output-type]">
+                <xsl:variable name="name">
+                    <xsl:value-of select="substring-before(tokenize($files//root//url,'/')[last()],'.xml')"/>
+                </xsl:variable>
+                <resource>
+                    <urn/>
+                    <url>
+                        <xsl:choose>
+                            <xsl:when test="@output-type='primary'">
+                                <xsl:value-of 
+                                    select="concat($tmp-base-uri,'/',$name,'.',substring-after(@mimetype,'/'))"/>
+                            </xsl:when>
+                            <xsl:when test="@output-type='secondary'">
+                                <xsl:value-of 
+                                    select="concat($tmp-base-uri,'/',$name,'-')"/>
+                                <xsl:value-of select="@id"/>
+                                <xsl:value-of select="concat('.',substring-after(@mimetype,'/'))"/>
+                            </xsl:when>
+                            <xsl:when test="@output-type='fixed'">
+                                <xsl:value-of select="concat($tmp-base-uri,'/',@id,'.',substring-after(@mimetype,'/'))"/>
+                            </xsl:when>
+                        </xsl:choose>
+                    </url>
+                    <type>
+                        <xsl:value-of select="@output-type"/>
+                    </type>
+                    <prox-id>
+                        <xsl:value-of select="@id"/>
+                    </prox-id>
+                </resource>
+            </xsl:for-each>
+        </targets>
     </xsl:template>
     
 

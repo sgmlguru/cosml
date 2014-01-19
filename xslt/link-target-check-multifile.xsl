@@ -7,14 +7,14 @@
     
     <xsl:output indent="yes" method="html"/>
     
-    <xsl:param name="file-list-url"/>
+    <xsl:param name="map-url"/><!--  select="'file:///mnt/win7-work/SGML/DTD/cosml/resource-map-TEST.xml'" -->
     
-    <xsl:param name="files" select="document($file-list-url,/)"/>
+    <xsl:param name="files" select="document($map-url,/)"/>
     
     <xsl:key name="id-nodes" match="*" use="@id"/>
     
     <xsl:param name="ids">
-        <xsl:for-each select="document($files//file,/)">
+        <xsl:for-each select="document($files//doc//resource[type='xml' or type='doc-root']/url,/)">
             <xsl:apply-templates select="*[@id]" mode="file"/>
         </xsl:for-each>
     </xsl:param>
@@ -37,7 +37,7 @@
             <body>
                <h1>Broken Links</h1>
                 
-                <xsl:for-each select="$files//file">
+                <xsl:for-each select="$files//doc//resource[type='xml' or type='doc-root']/url">
                     <xsl:variable name="file" select="."/>
                     <h2>
                         <xsl:value-of select="."/>

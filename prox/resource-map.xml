@@ -139,7 +139,7 @@
          <urn>URN-FOR-FILES-LIST-XML</urn>
           <url>http://www.sgmlguru.org/exist/rest/db/work/system/cosml/out/files.xml</url>
          <type>secondary</type>
-         <prox-id>id-file-url</prox-id>
+         <prox-id>files</prox-id>
       </resource>
       <resource>
          <urn>URN-FOR-HTM-OUT</urn>
