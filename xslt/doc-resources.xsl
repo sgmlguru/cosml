@@ -16,12 +16,12 @@
     <!-- Resource map template -->
     <xsl:param 
         name="res-map-template" 
-        select="document('file:///mnt/win7-work/SGML/DTD/prox/xml/resource-map-template.xml')/*"/>
+        select="document('http://localhost:8080/exist/rest/db/work/system/prox/xml/resource-map-template.xml')/*"/>
     
     <!-- ProX blueprint -->
     <xsl:param 
         name="prox-blueprint" 
-        select="document('file:///mnt/win7-work/SGML/DTD/prox/xml/prox-blueprint.xml')/*"/>
+        select="document('http://localhost:8080/exist/rest/db/work/system/prox/xml/prox-blueprint.xml')/*"/>
 
     <!-- Raw list of URIs into links to participating modules, recursive -->
     <xsl:param name="files">
