@@ -5,12 +5,12 @@
     
     <!-- Resource map document -->
     <p:input port="map" sequence="true">
-        <!--<p:document href="http://www.sgmlguru.org/exist/rest/db/work/system/common/xml/resource-map.xml"/>-->
+        <!--<p:document href="http://localhost:8080/exist/rest/db/work/tmp/resource-map.xml"/>-->
     </p:input>
     
     <!-- XSLT link target check -->
     <p:input port="stylesheet" sequence="true">
-        <!--<p:document href="http://www.sgmlguru.org/exist/rest/db/work/system/cosml/xslt/link-target-check-multifile.xsl"/>-->
+        <!--<p:document href="http://localhost:8080/exist/rest/db/work/system/cosml/xslt/link-target-check-multifile.xsl"/>-->
     </p:input>
     
     

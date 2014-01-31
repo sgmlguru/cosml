@@ -1,19 +1,19 @@
-<p:declare-step xmlns:cos="http://www.cassis.nu/cos" xmlns:c="http://www.w3.org/ns/xproc-step" xmlns:p="http://www.w3.org/ns/xproc" xmlns:cx="http://xmlcalabash.com/ns/extensions" name="pub" version="1.0">
+<p:declare-step xmlns:c="http://www.w3.org/ns/xproc-step" xmlns:cos="http://www.cassis.nu/cos" xmlns:cx="http://xmlcalabash.com/ns/extensions" xmlns:p="http://www.w3.org/ns/xproc" name="pub" version="1.0">
     
     
     <!-- Input document -->
     <p:input port="document">
-        <!--<p:document href="http://www.sgmlguru.org/exist/rest/db/work/docs/pdftest/test-root.xml"/>-->
+        <!--<p:document href="http://localhost:8080/exist/rest/db/work/docs/pdftest/test-root.xml"/>-->
     </p:input>
     
     <!-- XSLT COSML2HTML -->
     <p:input port="stylesheet">
-        <!--<p:document href="http://www.sgmlguru.org/exist/rest/db/work/system/cosml/xslt/cosml2html-ti.xsl"/>-->
+        <!--<p:document href="http://localhost:8080/exist/rest/db/work/system/cosml/xslt/cosml2html-ti.xsl"/>-->
     </p:input>
     
     <!-- Normalize -->
     <p:input port="stylesheet-norm">
-        <!--<p:document href="http://www.sgmlguru.org/exist/rest/db/work/system/cosml/xslt/normalize-2.xsl"/>-->
+        <!--<p:document href="http://localhost:8080/exist/rest/db/work/system/cosml/xslt/normalize-2.xsl"/>-->
     </p:input>
     
     <!-- Map URL -->
@@ -46,12 +46,6 @@
             <p:pipe port="stylesheet-norm" step="pub"/>
         </p:input>
     </p:xslt>
-    
-    <!--<p:delete match="//*/@xml:base" name="del">
-        <p:input port="source">
-            <p:pipe port="result" step="filter"/>
-        </p:input>
-    </p:delete>-->
     <p:store>
         <p:with-option name="href" select="$normalized"/>
         <p:input port="source">
@@ -61,25 +55,7 @@
     
     
     
-    <!-- Validation -->
-    <!--<p:try name="validate">
-        <p:group>
-            <p:output port="result"/>
-            <p:load dtd-validate="true" href="normalized.xml"/><!-\- file:///e:/SGML/DTD/Cassis/XProc/ -\->
-        </p:group>
-        <p:catch name="catch">
-            <p:output port="result"/>
-            <p:error code="cos:errors">
-                <p:input port="source">
-                    <p:pipe step="catch" port="error"/>
-                </p:input>
-            </p:error>
-        </p:catch>
-    </p:try>-->
-    
-    
-    
-    <!-- Converts normalized doc to FO format -->
+    <!-- Converts normalized doc to HTML format -->
     <p:xslt name="xml2htm">
         <p:input port="source">
             <p:pipe port="result" step="normalize"/>
@@ -113,5 +89,4 @@
             </p:inline>
         </p:input>
     </p:identity>
-    
 </p:declare-step>
