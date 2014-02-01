@@ -1,4 +1,4 @@
-<p:declare-step xmlns:c="http://www.w3.org/ns/xproc-step" xmlns:cos="http://www.cassis.nu/cos" xmlns:cx="http://xmlcalabash.com/ns/extensions" xmlns:p="http://www.w3.org/ns/xproc" name="pub" version="1.0">
+<p:declare-step xmlns:cos="http://www.cassis.nu/cos" xmlns:c="http://www.w3.org/ns/xproc-step" xmlns:p="http://www.w3.org/ns/xproc" xmlns:cx="http://xmlcalabash.com/ns/extensions" name="pub" version="1.0">
     
     
     <!-- Input document -->
@@ -71,22 +71,22 @@
     
     
     <!-- Stores HTML -->
-    <p:store name="store-html">
+    <!--<p:store name="store-html">
         <p:with-option name="href" select="$htm"/>
         <p:input port="source">
             <p:pipe port="result" step="xml2htm"/>
         </p:input>
-    </p:store>
+    </p:store>-->
     
     
     
     <!-- HTML result output -->
     <p:identity name="cosml-htm">
         <p:input port="source">
-            <!--<p:pipe port="result" step="xml2htm"/>-->
-            <p:inline>
+            <p:pipe port="result" step="xml2htm"/>
+            <!--<p:inline>
                 <p>Success!</p>
-            </p:inline>
+            </p:inline>-->
         </p:input>
     </p:identity>
 </p:declare-step>

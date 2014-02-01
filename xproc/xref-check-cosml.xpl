@@ -1,4 +1,4 @@
-<p:declare-step xmlns:cos="http://www.cassis.nu/cos" xmlns:c="http://www.w3.org/ns/xproc-step" xmlns:p="http://www.w3.org/ns/xproc" name="main" version="1.0">
+<p:declare-step xmlns:c="http://www.w3.org/ns/xproc-step" xmlns:cos="http://www.cassis.nu/cos" xmlns:p="http://www.w3.org/ns/xproc" name="main" version="1.0">
     
     
     <!-- Inputs -->
@@ -52,9 +52,9 @@
     
     
     <!-- Stores HTML report -->
-    <p:store name="store-html">
+    <!--<p:store name="store-html">
         <p:with-option name="href" select="$htm"/>
-    </p:store>
+    </p:store>-->
     
     
     
