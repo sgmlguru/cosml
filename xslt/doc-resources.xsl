@@ -1,18 +1,27 @@
-<xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xs="http://www.w3.org/2001/XMLSchema" exclude-result-prefixes="xs xlink" version="2.0">
+<xsl:stylesheet 
+    xmlns:xsl="http://www.w3.org/1999/XSL/Transform" 
+    xmlns:xlink="http://www.w3.org/1999/xlink" 
+    xmlns:xs="http://www.w3.org/2001/XMLSchema" 
+    exclude-result-prefixes="xs xlink" 
+    version="2.0">
+    
     <xsl:output indent="yes" method="xml" encoding="UTF-8"/>
 
     <!-- Root XML URI -->
     <xsl:param name="root-xml"/><!-- select="'file:///mnt/win7-work/SGML/DTD/cosml/local-tests/test-root.xml'" -->
+    
     <xsl:param name="tmp-base-uri"/>
     <!-- select="'xmldb:exist:///db/work/tmp'" -->
     
     <!-- Resource map template -->
     <xsl:param name="resmap-template-uri"/>
+    
     <xsl:param name="res-map-template" select="document($resmap-template-uri)/*"/>
     <!-- 'http://localhost:8080/exist/rest/db/work/system/prox/xml/resource-map-template.xml' -->
     
     <!-- ProX blueprint -->
     <xsl:param name="prox-blueprint-uri"/>
+    
     <xsl:param name="prox-blueprint" select="document($prox-blueprint-uri)/*"/>
     <!-- 'http://localhost:8080/exist/rest/db/work/system/prox/xml/prox-blueprint.xml' -->
 

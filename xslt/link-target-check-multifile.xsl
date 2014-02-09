@@ -1,13 +1,25 @@
-<xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:xlink="http://www.w3.org/1999/xlink" version="2.0" exclude-result-prefixes="xlink">
+<xsl:stylesheet 
+    xmlns:xsl="http://www.w3.org/1999/XSL/Transform" 
+    xmlns:xlink="http://www.w3.org/1999/xlink" 
+    version="2.0" 
+    exclude-result-prefixes="xlink">
+    
     <xsl:output indent="yes" method="html"/>
+    
     <xsl:param name="map-url"/><!--  select="'file:///mnt/win7-work/SGML/DTD/cosml/resource-map-TEST.xml'" -->
+    
     <xsl:param name="files" select="document($map-url,/)"/>
+    
     <xsl:key name="id-nodes" match="*" use="@id"/>
+    
     <xsl:param name="ids">
         <xsl:for-each select="document($files//doc//resource[type='xml' or type='doc-root']/url,/)">
             <xsl:apply-templates select="*[@id]" mode="file"/>
         </xsl:for-each>
     </xsl:param>
+    
+    
+    
     <xsl:template match="*[@id]" mode="file">
         <target>
             <xsl:attribute name="id">
@@ -16,6 +28,7 @@
             <xsl:apply-templates select="*" mode="file"/>
         </target>
     </xsl:template>
+    
     <xsl:template match="/">
         <html>
             <head>
@@ -35,9 +48,11 @@
             </body>
         </html>
     </xsl:template>
+    
     <xsl:template match="*">
         <xsl:apply-templates select="*"/>
     </xsl:template>
+    
     <xsl:template match="locator|hlink|ftnoteref">
         <xsl:variable name="href">
             <xsl:choose>
@@ -98,4 +113,5 @@
             </xsl:otherwise>
         </xsl:choose>
     </xsl:template>
+    
 </xsl:stylesheet>
