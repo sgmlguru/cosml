@@ -30,7 +30,9 @@ let $parameters := <parameters><param name="root-xml" value="{concat('http://loc
 (: Generates resource map :)
 let $result := 
     if ($input !='') 
-        then (transform:transform(doc(concat('http://localhost:8080/exist/rest',$file)),'http://localhost:8080/exist/rest/db/work/system/cosml/xslt/doc-resources.xsl', $parameters))
+        then (transform:transform(doc(concat('http://localhost:8080/exist/rest',$file)),
+            'http://localhost:8080/exist/rest/db/work/system/cosml/xslt/doc-resources.xsl', 
+            $parameters))
         else ""
 
 (: Save generated resource map in temp collection :)
@@ -38,14 +40,4 @@ let $store := if ($result != '')
     then xmldb:store("xmldb:exist:///db/work/tmp","resource-map.xml",$result)
     else ""
 
-
-(:return doc('../select-prox.xhtml')/*:)
-
 return $store
-
-(:return if ($result!='') 
-    then xmldb:store("xmldb:exist:///db/work/docs/test","test-resmap.xml",$result) 
-    (\:<p>{$result}</p>:\)
-    else "":)
-
-(:return (<p>Input file: {$file}, Output file: {concat('/db/work/',$targetparent,'/',$filename)}</p>):)

@@ -10,7 +10,7 @@ declare option exist:serialize "method=xml media-type=text/xml indent=no";
 (:let $login := xmldb:login('/db','admin','condesign')
 let $filter := request:get-parameter('filter', ''):)
 
-let $xml := collection(concat('xmldb:exist:///db/work/','docs'))
+let $xml := collection('xmldb:exist:///db/work/')
 
 return <data>
     
