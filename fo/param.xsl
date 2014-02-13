@@ -1,15 +1,9 @@
-<?xml version="1.0" encoding="utf-8"?>
-<xsl:stylesheet 
-    xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
-    xmlns:fo="http://www.w3.org/1999/XSL/Format" 
-    xmlns:xlink="http://www.w3.org/1999/xlink"
-    version="2.0">
+<xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:fo="http://www.w3.org/1999/XSL/Format" version="2.0">
 
 
 
     <!-- Global variables -->
     <!-- ================ -->
-
     <xsl:variable name="doc-title" select="//meta-data/doc-info/title"/>
     <xsl:variable name="subtitle" select="//meta-data/doc-info/subtitle"/>
     <xsl:variable name="doc-no" select="//meta-data/doc-info/doc-no/number"/>
@@ -17,7 +11,6 @@
     <xsl:variable name="year" select="//meta-data/pub-info/rev-date/y"/>
     <xsl:variable name="applic" select="/*/@applic"/>
     <xsl:variable name="root-name" select="name(/*)"/>
-
     <xsl:variable name="demo">
         <xsl:choose>
             <xsl:when test="$root-name = 'cargotec'">
@@ -32,17 +25,14 @@
                 <xsl:value-of select="''"/>
             </xsl:otherwise>
         </xsl:choose>
-
     </xsl:variable>
 
 
 
     <!-- Page geometry parameters -->
     <!-- ======================== -->
-
     <xsl:param name="double.sided" select="'1'"/>
     <xsl:param name="paper.type" select="'A4'"/>
-
     <xsl:param name="page.width">
         <xsl:choose>
             <xsl:when test="$paper.type = 'A4'">210mm</xsl:when>
@@ -50,7 +40,6 @@
             <xsl:otherwise>210mm</xsl:otherwise>
         </xsl:choose>
     </xsl:param>
-
     <xsl:param name="page.height">
         <xsl:choose>
             <xsl:when test="$paper.type = 'A4'">297mm</xsl:when>
@@ -58,17 +47,14 @@
             <xsl:otherwise>297mm</xsl:otherwise>
         </xsl:choose>
     </xsl:param>
-
     <xsl:param name="page.margin.bottom">
         <xsl:if test="$paper.type='A4'">5mm</xsl:if>
         <xsl:if test="$paper.type='A5'">2.5mm</xsl:if>
     </xsl:param>
-
     <xsl:param name="page.margin.top">
         <xsl:if test="$paper.type='A4'">5mm</xsl:if>
         <xsl:if test="$paper.type='A5'">2.5mm</xsl:if>
     </xsl:param>
-
     <xsl:param name="page.margin.inner">
         <xsl:choose>
             <xsl:when test="$double.sided != '0'">
@@ -78,7 +64,6 @@
             <xsl:otherwise>20mm</xsl:otherwise>
         </xsl:choose>
     </xsl:param>
-
     <xsl:param name="page.margin.outer">
         <xsl:choose>
             <xsl:when test="$double.sided != '0'">
@@ -88,17 +73,14 @@
             <xsl:otherwise>20mm</xsl:otherwise>
         </xsl:choose>
     </xsl:param>
-
     <xsl:param name="body.margin.bottom">
         <xsl:if test="$paper.type='A4'">30mm</xsl:if>
         <xsl:if test="$paper.type='A5'">20mm</xsl:if>
     </xsl:param>
-
     <xsl:param name="body.margin.top">
         <xsl:if test="$paper.type='A4'">30mm</xsl:if>
         <xsl:if test="$paper.type='A5'">20mm</xsl:if>
     </xsl:param>
-
     <xsl:param name="body.margin.inner">
         <xsl:choose>
             <xsl:when test="$double.sided != '0'">
@@ -112,7 +94,6 @@
             <xsl:otherwise>30mm</xsl:otherwise>
         </xsl:choose>
     </xsl:param>
-
     <xsl:param name="body.margin.outer">
         <xsl:choose>
             <xsl:when test="$double.sided != '0'">
@@ -126,12 +107,10 @@
             <xsl:otherwise>30mm</xsl:otherwise>
         </xsl:choose>
     </xsl:param>
-
     <xsl:param name="region.before.extent">
         <xsl:if test="$paper.type='A4'">25mm</xsl:if>
         <xsl:if test="$paper.type='A5'">19mm</xsl:if>
     </xsl:param>
-
     <xsl:param name="region.after.extent">
         <xsl:if test="$paper.type='A4'">25mm</xsl:if>
         <xsl:if test="$paper.type='A5'">19mm</xsl:if>
@@ -172,7 +151,6 @@
             <xsl:when test="$demo !=''">1</xsl:when>
             <xsl:otherwise>0</xsl:otherwise>
         </xsl:choose>
-
     </xsl:param>
 
     <!-- Generate a "legal" page with copyright and trademark info -->
@@ -213,7 +191,6 @@
                 Tahoma</xsl:otherwise>
         </xsl:choose>
     </xsl:param>
-
     <xsl:param name="body-font-size">
         <xsl:if test="$paper.type='A4'">12pt</xsl:if>
         <xsl:if test="$paper.type='A5'">9pt</xsl:if>
@@ -226,12 +203,10 @@
             <xsl:otherwise>sans-serif</xsl:otherwise>
         </xsl:choose>
     </xsl:param>
-
     <xsl:param name="heading1-font-size">
         <xsl:value-of select="number(substring-before($body-font-size, 'pt')) * 1.5"/>
         <xsl:text>pt</xsl:text>
     </xsl:param>
-
     <xsl:param name="heading2-font-size">
         <xsl:value-of select="'14pt'"/>
     </xsl:param>
@@ -242,8 +217,8 @@
     <!-- =============== -->
 
     <!-- Path to directory containing standard images etc (note: trailing slash) -->
-    <xsl:param name="standard.files.dir"
-        select="'http://www.sgmlguru.org/exist/rest/db/work/system/cosml/standard-images/'"/>
+    <!--<xsl:param name="standard.files.dir" select="'http://ti-cos.cassis2.nu/portals/0/cos_root/template/cos/standard-images/'"/>-->
+    <xsl:param name="standard.files.dir" select="'http://localhost:8080/exist/rest/db/work/system/cosml/standard-images/'"/>
 
     <!-- Name of logotype image -->
     <xsl:param name="logo.image">logotyp.jpg</xsl:param>
@@ -258,5 +233,4 @@
 
     <!-- Use graphics in notes and admonishments -->
     <!--xsl:param name="admon.graphics" select="1"/-->
-
 </xsl:stylesheet>
