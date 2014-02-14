@@ -26,6 +26,9 @@
                 <xsl:attribute name="TEXT">
                     <xsl:value-of select="tokenize(base-uri(.),'/')[last()]"/>
                 </xsl:attribute>
+                <xsl:attribute name="LINK">
+                    <xsl:value-of select="base-uri(.)"/>
+                </xsl:attribute>
                 <xsl:apply-templates select=".//block-inset|.//inset|.//graphics"/>
             </node>
         </map>
@@ -33,21 +36,33 @@
     
     <xsl:template match="graphics">
         <node>
-            <xsl:attribute name="TEXT">
-                <xsl:value-of select="tokenize(@xlink:href,'/')[last()]"/>
-            </xsl:attribute>
+            <xsl:call-template name="attrs"/>
         </node>
     </xsl:template>
     
     <xsl:template match="block-inset|inset">
         <node>
-            <xsl:attribute name="TEXT">
-                <xsl:value-of select="tokenize(@xlink:href,'/')[last()]"/>
-            </xsl:attribute>
+            <xsl:call-template name="attrs"/>
             <xsl:apply-templates select="doc(substring-before(@xlink:href,'#'))//inset |
                 doc(substring-before(@xlink:href,'#'))//block-inset |
                 doc(substring-before(@xlink:href,'#'))//graphics"/>
         </node>
+    </xsl:template>
+    
+    <xsl:template name="attrs">
+        <xsl:attribute name="TEXT">
+            <xsl:value-of select="tokenize(@xlink:href,'/')[last()]"/>
+        </xsl:attribute>
+        <xsl:attribute name="LINK">
+            <xsl:choose>
+                <xsl:when test="contains(@xlink:href,'#')">
+                    <xsl:value-of select="substring-before(@xlink:href,'#')"/>        
+                </xsl:when>
+                <xsl:otherwise>
+                    <xsl:value-of select="@xlink:href"/>
+                </xsl:otherwise>
+            </xsl:choose>
+        </xsl:attribute>
     </xsl:template>
     
     
