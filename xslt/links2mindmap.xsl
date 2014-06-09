@@ -13,9 +13,9 @@
 
     
     <!-- Root XML -->
-    <xsl:param name="root-xml"/>
+    <!--<xsl:param name="root-xml"/>-->
     
-    <xsl:param name="tmp-base-uri"/>
+    <!--<xsl:param name="tmp-base-uri"/>-->
     <!-- select="'xmldb:exist:///db/work/tmp'" -->
     
     

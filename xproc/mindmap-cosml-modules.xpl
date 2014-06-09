@@ -77,16 +77,6 @@
     
     
     
-    <!-- Stores HTML -->
-    <!--<p:store name="store-html">
-        <p:with-option name="href" select="$htm"/>
-        <p:input port="source">
-            <p:pipe port="result" step="xml2htm"/>
-        </p:input>
-    </p:store>-->
-    
-    
-    
     <!-- Mindmap output -->
     <p:identity name="cosml-mindmap">
         <p:input port="source">
