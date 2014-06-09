@@ -15,7 +15,16 @@
         <xsl:param name="stringName"/>
 
         <xsl:variable name="doclang" select="/*/@xml:lang"/>
-        <xsl:variable name="StringFile" select="document('strings.xml')"/>
+        <xsl:variable name="StringFile">
+            <xsl:choose>
+                <xsl:when test="doc-available(concat('strings-',$doclang,'.xml'))">
+                    <xsl:copy-of select="document(concat('strings-',$doclang,'.xml'))"/>
+                </xsl:when>
+                <xsl:otherwise>
+                    <xsl:copy-of select="document('strings.xml')"/>
+                </xsl:otherwise>
+            </xsl:choose>
+        </xsl:variable>
         <xsl:variable name="PrimaryLang" select="substring-before($doclang,'-')"/>
         <xsl:variable name="str" select="$StringFile/strings/string[@name=$stringName]"/>
 
@@ -37,6 +46,7 @@
                     <xsl:text>Warning: no string named '</xsl:text>
                     <xsl:value-of select="$stringName"/>
                     <xsl:text>' found.</xsl:text>
+                    <xsl:value-of select="$StringFile//string[@xml-lang='sv-SE' and @name='Note']/text()"></xsl:value-of>
                 </xsl:message>
             </xsl:otherwise>
 
